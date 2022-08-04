@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'edu-qld';
+    src: url('../fonts/EduQLDBeginner-Regular.ttf');
+}
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+body{
+    font-family: 'poppins';
+}
+.title,h1,h2,h3,h4,h5{
+    font-family: 'edu-qld';
+}
