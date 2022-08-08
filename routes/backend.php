@@ -17,3 +17,4 @@ Route::get('/BNBLEmployeeDirectory/contact-requests', [BackendController::class,
 Route::get('/BNBLEmployeeDirectory/process-contact-request/{id}/{action}', [ContactController::class, 'processContact'])->middleware(['auth'])->name('process-contact-request');
 Route::get('/BNBLEmployeeDirectory/{id}/delete/', [ContactController::class, 'deleteContact'])->middleware(['auth'])->name('delete-contact');
 Route::get('/BNBLEmployeeDirectcory/report', [BackendController::class, 'report'])->middleware(['auth'])->name('report');
+Route::post('/BNBLEmployeeDirectory/report', [ContactController::class, 'generateReport'])->middleware(['auth'])->name('generate-report');

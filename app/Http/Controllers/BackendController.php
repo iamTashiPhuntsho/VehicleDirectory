@@ -8,6 +8,7 @@ use App\Models\Employee;
 use App\Models\Department;
 use App\Models\Location;
 use App\Models\ContactRequest;
+use App\Models\Vertical;
 use Auth;
 
 class BackendController extends Controller
@@ -62,6 +63,9 @@ class BackendController extends Controller
 
 	public function report(){
         $user = Auth::user();
-        return view('backend.report',compact('user'));
+        $departments = Department::all();
+    	$locations = Location::all();
+        $verticals = Vertical::all();
+        return view('backend.report',compact('user','locations','departments','verticals'));
     }
 }
