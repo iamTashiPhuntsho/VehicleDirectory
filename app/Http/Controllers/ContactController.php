@@ -8,7 +8,9 @@ use App\Models\Employee;
 use App\Models\Contact;
 use App\Models\Signin;
 use App\Models\ContactRequest;
+use App\Exports\ReportExport;
 use Storage;
+use Excel;
 
 class ContactController extends Controller
 {
@@ -217,5 +219,53 @@ class ContactController extends Controller
             }
         }
         return redirect()->route('directory')->with(['status'=>$status, 'msg'=>$msg]);
+    }
+
+    public function generateReport(Request $request){
+        $header_state = $header = '';
+
+        if($request->all){
+            $header_state = 'all';
+        }
+        elseif(!blank($request->column))
+        {
+            $header_state = 'selected';
+            $header = $request->column;
+        }
+        else{
+            return redirect()->route('report');
+        }
+        $name = $request->form_name;
+        $employee_id = $request->form_employee_id;
+        $title = $request->form_title;
+        $department = $request->form_department;
+        $location = $request->form_location;
+        $status = $request->form_status;
+        
+        $l_records = Contact::when($location, function ($query, $location) { 
+            $query->where('location_id', $location);
+        })
+        ->pluck('employee_id');
+        
+
+        $records = Employee::when($name, function ($query, $name) {
+            $query->where('name','like', "%$name%");
+        })
+        ->when($employee_id, function ($query, $employee_id) {
+            $query->where('employee_id', 'like', "%$employee_id%");
+        }) 
+        ->when($title, function ($query, $title) {
+            $query->where('title', 'like', "%$title%");
+        }) 
+        ->when($department, function ($query, $department) {
+            $query->where('department_id', "$department");
+        })
+        ->when($status, function ($query, $status) {
+            $query->where('status', "$status");
+        })
+        ->whereIn('id', $l_records)->get();
+
+        return Excel::download(new ReportExport ($records,$header_state, $header), 'Report.xlsx');
+        // return view('backend.report-xlsx', compact('records','header_state', 'header'));
     }
 }
