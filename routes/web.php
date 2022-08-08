@@ -25,10 +25,6 @@ Route::get('/first', function () {
     return view('first');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__.'/auth.php';
 require __DIR__.'/backend.php';
 

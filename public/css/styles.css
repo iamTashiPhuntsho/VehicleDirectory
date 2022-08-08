@@ -1,11 +1,17 @@
 @font-face {
+<<<<<<< HEAD
   font-family: 'edu-qld';
   src: url('../fonts/EduQLDBeginner-Regular.ttf');
+=======
+    font-family: 'poppins-black';
+    src: url('../fonts/Poppins-Black.ttf');
+>>>>>>> origin/tashi-dev
 }
 @font-face {
   font-family: 'poppins';
   src: url('../fonts/Poppins-Regular.ttf');
 }
+<<<<<<< HEAD
 body{
   font-family: 'poppins';
 }
@@ -176,4 +182,18 @@ padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
 }
 .nav_name{
   font-size: 13px;
+}
+body, .title2{
+    font-family: 'poppins';
+}
+.title{
+    font-family: 'poppins-black';
+}
+.pagination{
+    display: flex;
+}
+.paginate_button{
+    padding: 10px;
+    font-size: 14px;
+>>>>>>> origin/tashi-dev
 }
