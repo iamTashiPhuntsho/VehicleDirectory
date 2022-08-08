@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('present_address',1000)->nullable();
             $table->string('vehicle_no')->nullable();
             $table->string('image');
-            $table->enum('status', ['active','disabled']);
+            $table->enum('status', ['active','disabled'])->default('active');
             $table->timestamps();
             $table->foreign('department_id')->references('id')
                                             ->on('departments')

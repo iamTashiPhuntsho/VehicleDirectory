@@ -15,11 +15,14 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('directory')">
+                    <x-nav-link :href="route('directory')" :active="request()->routeIs('directory')">
                         {{ __('Directory') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('contact-request')">
+                    <x-nav-link :href="route('view-contact-request')" :active="request()->routeIs('view-contact-request')">
                         {{ __('View Contact Requests') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('report')" :active="request()->routeIs('report')">
+                        {{ __('Reports') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -72,11 +75,14 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('directory')">
+            <x-responsive-nav-link :href="route('directory')" :active="request()->routeIs('directory')">
                 {{ __('Directory') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('contact-request')">
+            <x-responsive-nav-link :href="route('view-contact-request')" :active="request()->routeIs('view-contact-request')">
                 {{ __('View Contact Requests') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('report')" :active="request()->routeIs('report')">
+                {{ __('Reports') }}
             </x-responsive-nav-link>
         </div>
 

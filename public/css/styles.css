@@ -1,14 +1,21 @@
 @font-face {
-    font-family: 'edu-qld';
-    src: url('../fonts/EduQLDBeginner-Regular.ttf');
+    font-family: 'poppins-black';
+    src: url('../fonts/Poppins-Black.ttf');
 }
 @font-face {
     font-family: 'poppins';
     src: url('../fonts/Poppins-Regular.ttf');
 }
-body{
+body, .title2{
     font-family: 'poppins';
 }
-.title,h1,h2,h3,h4,h5{
-    font-family: 'edu-qld';
+.title{
+    font-family: 'poppins-black';
+}
+.pagination{
+    display: flex;
+}
+.paginate_button{
+    padding: 10px;
+    font-size: 14px;
 }
