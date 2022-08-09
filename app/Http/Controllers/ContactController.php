@@ -268,4 +268,59 @@ class ContactController extends Controller
         return Excel::download(new ReportExport ($records,$header_state, $header), 'Report.xlsx');
         // return view('backend.report-xlsx', compact('records','header_state', 'header'));
     }
+
+    public function bulkUpload(Request $request){
+    	$status = '0';
+    	$file = $request->file('contact');
+        $csvData = file_get_contents($file);
+        $rows = array_map('str_getcsv',explode("\n", $csvData));
+        $header = array_shift($rows);
+        $check = ['Name','Employee ID','Designation','Job Title','Department','Extension','Mobile','Email','Flexcube','Location','Present Address','Vehicle Number','Profile'];
+        if($header == $check)
+        {
+            foreach($rows as $row){
+                if(count($row) == count($header))
+                {
+                    $row = array_combine($header, $row);
+                    $employee = new Employee;
+                    $contact = new Contact;
+                    $signin = new Signin;
+                    $employee->name = $row['Name'];
+                    $employee->employee_id = $row['Employee ID'];
+                    $employee->designation = $row['Designation'];
+                    $employee->title = $row['Job Title'];
+                    $employee->department_id = $row['Department'];
+                    $employee->image = $row['Profile'];
+                    $employee->present_address = $row['Present Address'];
+                    $employee->vehicle_no = $row['Vehicle Number'];
+                    if($employee->save())
+                    {
+                    	$contact->email = $row['Email'];
+			    		$contact->mobile = $row['Mobile'];
+			    		$contact->extension = $row['Extension'];
+			    		$contact->flexcube = $row['Flexcube'];
+			    		$contact->location_id = $row['Location'];
+			    		$contact->employee_id = $employee->id;
+			    		$contact->save();
+                        
+                        $signin->employee_id = $employee->id;
+                        $signin->save();
+			    		
+                        $status = '1';
+			    		$msg = "Contact Information has been Successfully uploaded from CSV file.";	
+                	}
+                	else{
+                		$msg = "Contact Information couldnot be imported from CSV file.";
+                    }
+                }
+                else{
+                    $msg = "CSV file doesn't have correct content";
+                }
+            }
+        }
+		else{
+    		$msg =  "The Selected CSV file doesnot have the correct header. Please Check your .csv file.";
+    		}
+    	return back()->with(['status'=>$status,'msg'=>$msg]);
+    }
 }

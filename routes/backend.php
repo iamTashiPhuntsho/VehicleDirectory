@@ -10,6 +10,7 @@ Route::get('/BNBLEmployeeDirectory/admin-directory',[BackendController::class, '
 Route::get('/BNBLEmployeeDirectory/admin-add-contact', [BackendController::class, 'addContactForm'])->middleware(['auth'])->name('add-contact');
 Route::post('/BNBLEmployeeDirectory/admin-add-contact', [ContactController::class, 'addContact'])->middleware(['auth']);
 Route::get('/BNBLEmployeeDirectory/admin-add-contact/bulk-upload', [BackendController::class, 'bulkUploadForm'])->middleware(['auth'])->name('bulkupload');
+Route::post('/BNBLEmployeeDirectory/admin-add-contact/bulk-upload', [ContactController::class, 'bulkUpload'])->middleware(['auth'])->name('bulkupload-contact');
 Route::get('/BNBLEmployeeDirectory/{id}/view', [BackendController::class, 'viewContact'])->middleware(['auth'])->name('view-contact');
 Route::get('/BNBLEmployeeDirectory/{id}/edit-contact', [BackendController::class, 'editContact'])->middleware(['auth'])->name('edit-contact');
 Route::post('/BNBLEmployeeDirectory/update-contact', [ContactController::class, 'updateContact'])->middleware(['auth'])->name('update-contact');
