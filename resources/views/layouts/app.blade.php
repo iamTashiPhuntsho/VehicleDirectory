@@ -23,6 +23,16 @@
 
             <!-- Page Content -->
             <main>
+                @if(session('status') == '1')
+                    <div class="bg-green-500 text-white w-1/2 mx-auto rounded-b-md">
+                        <p class="text-sm title2 py-1 px-5 text-center">{{ session('msg') }}</p>
+                    </div>
+                @endif
+                @if(session('status') == '0')
+                    <div class="bg-red-500 text-white w-1/2 mx-auto rounded-b-md">
+                        <p class="text-sm title2 py-1 px-5 text-center">{{ session('msg') }}</p>
+                    </div>
+                @endif
                 {{ $slot }}
             </main>
         </div>

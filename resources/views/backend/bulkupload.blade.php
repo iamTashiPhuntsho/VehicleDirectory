@@ -9,7 +9,7 @@
                             <p class="text-sm text-gray-500">Administrator can bulk upload information of new staffs using the form below.</p>
                         </div>
                     </div>
-                    <form class="user" action="{{ route('add-contact') }}" method="POST" enctype="multipart/form-data">
+                    <form class="user" action="{{ route('bulkupload-contact') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="grid mt-3">
                             <div>
