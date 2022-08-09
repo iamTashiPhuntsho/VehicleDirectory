@@ -8,20 +8,19 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
-                <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Employee Directory </span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link active"><i class='fas fa-home'></i> <span class="nav_logo-name">Dashboard</span> </a> 
+                <a href="#" class="nav_link"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Employee Directory </span> </a>
+                <div class="nav_list"> <a href="{{ route('get_search_path') }}" class="nav_link active"><i class='fas fa-home'></i> <span class="nav_logo-name">Dashboard</span> </a> 
                 <a href="#" class="nav_link"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
-                <a href="#" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name">Edit Your Informations</span> </a>
-                 <a href="#" class="nav_link"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Your Information</span> </a> 
-                 <a href="#" class="nav_link"><i class="fas fa-address-book"></i> <span class="nav_name">Generate Report</span> </a> 
-                 <a href="#" class="nav_link"> <i class="fas fa-signature"></i> <span class="nav_name">Generate Mail Signature</span> </a> 
+                <a href="{{ route('login_info_path') }}" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name">Edit Your Informations</span> </a>
+                 <a href="{{ route('employee_registration_path') }}" class="nav_link"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Your Information</span> </a> 
+                 <a href="{{ route('sign_index_path') }}" class="nav_link"> <i class="fas fa-signature"></i> <span class="nav_name">Generate Mail Signature</span> </a> 
             </div>
         </nav>
     </div>
     <!--Container Main start-->
- <script>
-    
-document.addEventListener("DOMContentLoaded", function(event) {
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
    
    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
    const toggle = document.getElementById(toggleId),
@@ -59,9 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
    
     // Your code to run since DOM is loaded and ready
    });
-
- </script>  
-</body>
+</script>
 
 
     <!--Container Main end-->

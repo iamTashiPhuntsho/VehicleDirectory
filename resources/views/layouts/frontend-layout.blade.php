@@ -14,6 +14,8 @@
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         <!-- Scripts -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body class="font-sans antialiased">
@@ -24,7 +26,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/all.min.js') }}"></script>
+       
+        
     </body>
 </html>
