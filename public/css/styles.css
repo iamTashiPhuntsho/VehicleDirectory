@@ -1,17 +1,17 @@
 @font-face {
-<<<<<<< HEAD
+
   font-family: 'edu-qld';
   src: url('../fonts/EduQLDBeginner-Regular.ttf');
-=======
+
     font-family: 'poppins-black';
     src: url('../fonts/Poppins-Black.ttf');
->>>>>>> origin/tashi-dev
+
 }
 @font-face {
   font-family: 'poppins';
   src: url('../fonts/Poppins-Regular.ttf');
 }
-<<<<<<< HEAD
+
 body{
   font-family: 'poppins';
 }
@@ -38,7 +38,24 @@ margin: var(--header-height) 0 0 0;
 padding: 0 1rem;
 font-family: var(--body-font);
 font-size: var(--normal-font-size);
-transition: .5s}
+transition: .5s;
+padding: 0;
+margin: 0;
+background-color: #f6f9fd;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Inter Variable,Arial,sans-serif;
+  font-weight: 500;
+  color: #343a40;
+}
 
 a{
 text-decoration: none;
@@ -53,9 +70,22 @@ top: 0;left: 0;
 display: flex;
 align-items: center;
 justify-content: space-between;padding: 0 1rem;
-background-color: var(--white-color);
+
 z-index: var(--z-fixed);
 transition: .5s;
+
+
+position: fixed;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 0 16px rgba(190,207,246,.3);
+padding: 0 40px 0 24px;
+top: 0;
+
+z-index: 5;
+background-color: #fff;
+transition: all .2s linear;
 }
 
 .header_toggle{
@@ -174,7 +204,7 @@ padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
 
 }
 .show{
-  width: calc(var(--nav-width) + 156px);
+  width: calc(var(--nav-width) + 175px);
 }
 .body-pd{
   padding-left: calc(var(--nav-width) + 188px);
@@ -195,5 +225,5 @@ body, .title2{
 .paginate_button{
     padding: 10px;
     font-size: 14px;
->>>>>>> origin/tashi-dev
+
 }
