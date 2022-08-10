@@ -47,9 +47,7 @@
                                         $i++
                                         @endphp
                                         <td>
-                                        <a href="{{ route('view-contact', $u->id) }}" class="text-blue-500 hover:text-blue-600 duration-700 items-center">
-                                            <b>{{ $u->name }}</b>
-                                        </a>  
+                                            <b>{{ $u->name }}</b>  
                                         </td>
                                         <td>{{ $u->email }}</td>
                                         
