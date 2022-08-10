@@ -13,4 +13,9 @@ class Department extends Model
     {
     	return $this->hasMany(Employee::class);
     }
+
+    public function vertical()
+    {
+    	return $this->belongsTo(Vertical::class);
+    }
 }
