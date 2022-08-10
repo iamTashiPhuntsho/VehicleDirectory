@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DirectoryController;
-
+use App\Http\Controllers\VehicleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +14,6 @@ use App\Http\Controllers\DirectoryController;
 |
 */
 // Route::get('/', [DirectoryController::class, 'getDirectorySearch'])->name('get_search_path');
-
-
-
-Route::get('/wc', function () {
-    return view('welcome');
-});
-
-Route::get('/first', function () {
-    return view('first');
-});
 
 require __DIR__.'/auth.php';
 require __DIR__.'/backend.php';
@@ -38,25 +28,11 @@ Route::get('/BNBLEmployeeDirectory/result/{id}/show/{ename}/{location}/{departme
 Route::post('/BNBLEmployeeDirectory', 'App\Http\Controllers\DirectoryController@searchDirectory')->name('search_directory_path');
 
 //Routes for vehicle directory
-Route::get('/', 'VehicleController@getDirectorySearch');
+// Route::get('/', 'App\Http\Controllers\VehicleController@getDirectorySearch');
 Route::get('/BNBLEmployeeVehicle/vehicle', 'App\Http\Controllers\VehicleController@getDirectorySearch')->name('get_vehicle_path');
 Route::get('/BNBLEmployeeVehicley/vehicleresult', 'App\Http\Controllers\VehicleController@getResult')->name('vehicle_path');
 Route::get('/BNBLEmployeeVehicle/vehicleresult/{id}/show/{ename}/{location}/{department}', 'App\Http\Controllers\VehicleController@getShow')->name('show_vehicle_path');
-Route::post('/BNBLEmployeeVehicle', 'App\Http\Controllers\VehicleController@searchDirectory')->name('search_vehicle_path');
-
-/*
-|----------------------------------------------------------------------------------
-| Routes for DOA
-|----------------------------------------------------------------------------------
-*/ 
-Route::get('/DOA', 'DOAController@index')->name('doa_index_path');
-Route::post('/DOA/get-vertical', 'DOAController@getRoute')->name('get_route_path');
-Route::get('/DOA/credit-vertical', 'DOAController@credit')->name('credit_doa_path');
-Route::get('/DOA/finance-vertical', 'DOAController@finance')->name('finance_doa_path');
-Route::get('/DOA/operation-vertical', 'DOAController@operation')->name('operation_doa_path');
-Route::get('/DOA/resource-vertical', 'DOAController@resource')->name('resource_doa_path');
-Route::get('/DOA/strategy-and-information-technology-vertical', 'DOAController@sit')->name('strategy_and_information_technology_doa_path');
-
+Route::post('/BNBLEmployeeVehicle', 'App\Http\Controllers\DirectoryController@searchDirectory@searchDirectory')->name('search_vehicle_path');
 
 /*
 |----------------------------------------------------------------------------------

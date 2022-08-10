@@ -1,6 +1,5 @@
 <x-frontend-layout>
     <x-sidebar />
-
     <div class="container-fluid p-0">
       	<section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
         	<div class="my-auto">

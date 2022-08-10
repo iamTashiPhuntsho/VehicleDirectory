@@ -105,4 +105,4 @@ The contents of this e-mail and any attachment(s) are confidential and intended 
         	</div>
       	</section>
     </div>
-	</x-frontend-layout>
+</x-frontend-layout>

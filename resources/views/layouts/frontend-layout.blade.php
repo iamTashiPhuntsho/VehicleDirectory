@@ -10,23 +10,26 @@
         <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/styles.css') }}>
         <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
+        <link rel="stylesheet" href={{ asset('css/directory.css') }}>
         <!-- Fonts -->
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         <!-- Scripts -->
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
-    <body class="font-sans antialiased">
+    <body id="body-pd" class="font-sans antialiased">
+        
         <div class="min-h-screen bg-gray-100">
 
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+                
+    
+                
             </main>
         </div>
-       
-        
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     </body>
 </html>

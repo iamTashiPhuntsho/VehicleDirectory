@@ -1,6 +1,5 @@
-@extends('layouts.frontend')
-
-@section('content')
+<x-frontend-layout>
+    <x-sidebar />
   <nav class="navbar navbar-expand-lg navbar-dark {{$no == 1 ? 'bg-bnb-orange' : 'bg-bnb-blue'}} fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
           <span class="d-block d-lg-none">Search Employee</span>
@@ -57,4 +56,4 @@
           </div>
         </section>
     </div>
-@endsection
+</x-frontend-layout>

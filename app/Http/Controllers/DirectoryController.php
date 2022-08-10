@@ -16,6 +16,7 @@ class DirectoryController extends Controller
         $locations = Location::orderBy('name')->get();
     	$no = rand(10,30)%2;
         $employees = Employee::count();
+        $employees = Employee::with('contact')->get();
         //$department = Department::count();
         //$location = Location::count();
     	return view('frontend.search',compact('no','departments','locations','employees'));

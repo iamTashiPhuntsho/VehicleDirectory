@@ -122,4 +122,4 @@
         	</div>
       	</section>
     </div>
-    </x-frontend-layout>
+</x-frontend-layout>

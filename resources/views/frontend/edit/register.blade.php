@@ -1,76 +1,5 @@
-@extends('layouts.frontend')
-
-@section('content')
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-bnb-blue" id="sideNav">
-      	<a class="navbar-brand js-scroll-trigger" href="#page-top">
-        	<span class="d-block d-lg-none">Search Employee</span>
-        	<span class="d-none d-lg-block">
-          		<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{asset ('images/bnb.png')}}" alt="">
-        	</span>
-      	</a>
-      	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        	<span class="navbar-toggler-icon"></span>
-      	</button>
-      	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-        	<ul class="navbar-nav">
-          		<li class="nav-item mb-5">
-            		<h3 class="no-case">
-            			Employee Directory 
-            		</h3>
-          		</li>
-				 <li class="nav-item nav-list">
-					<a href="{{ route('get_search_path') }}">
-						<small class="text-white">
-						<i class='fas fa-home'></i>
-							Dashboard
-						</small>
-				
-					</a>
-          		</li>
-				  <li class="nav-item nav-list">
-					<a href="{{ route('get_vehicle_path') }}">
-						<small class="text-white">
-						<i class='fas fa-car-alt'></i>
-							Vehicle Details
-						</small>
-					</a>
-          		</li>
-				  <li class="nav-item nav-list">
-					<a href="{{ route('login_info_path') }}">
-						<small class="text-white">
-						<i class="fas fa-user-edit"></i>
-							Edit Your Information
-						</small>
-					</a>
-          		</li>
-				  <li class="nav-item nav-list">
-					<a href="{{ route('employee_registration_path') }}">
-						<small class="text-white">
-						<i class="fas fa-user-plus"></i>
-							Register Your Information
-						</small>
-					</a>
-          		</li>
-				  <li class="nav-item nav-list">
-					<a href="{{ route('get_report_path') }}">
-					<small class="text-white">
-					<i class='fas fa-address-book'></i>
-						Generate Report
-						</small>
-					</a>
-          		</li>
-				  <li class="nav-item nav-list">
-					<a href="{{ route('sign_index_path') }}">
-						<small class="text-white">
-						<i class="fas fa-signature"></i>
-						Generate Mail Signature
-						</small>
-					</a>
-          		</li>
-        	</ul>	
-      	</div>
-		
-    </nav>
+<x-frontend-layout>
+    <x-sidebar />
 
     <div class="p-5">
           <h2>Contact Information Registration</h2>
@@ -168,4 +97,4 @@
                     </form>
                 </div>
     </div>
-@endsection
+</x-frontend-layout>
