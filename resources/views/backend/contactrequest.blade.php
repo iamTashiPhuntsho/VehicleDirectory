@@ -6,12 +6,12 @@
                     <h3 class="title text-lg">Contact Addition Requests</h3>
                     <p class="text-sm text-gray-500">Approve or reject contact addition requests submitted by the employees.</p>
                 </div>
-                <div class="grid grid-cols-2">
+                <div class="grid lg:grid-cols-2">
                     @foreach($contacts as $contact)
                         <x-contact-request :employee="$contact" />
                     @endforeach
                     @if(blank($contacts))
-                        <div class="p-14 flex items-center col-span-2">
+                        <div class="p-14  grid md:flex items-center col-span-2">
                             <x-application-logo-login />
                             <div class="text-gray-500">
                                 <h2 class="title text-xl">Contact Addition Request</h2>

@@ -11,7 +11,7 @@
                     </div>
                     <form class="user" action="{{ route('add-contact') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="grid grid-cols-3 gap-4 mt-3">
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3">
                             <div>
                                 <label for="name" class="text-xs font-semibold text-blue-800">Employee Name</label>
                                 <input type="text" class="w-full" placeholder="Employee Name" name="name" id="name" required autofocus>

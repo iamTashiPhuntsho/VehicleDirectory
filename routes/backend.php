@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\ContactController;
 
-Route::get('BNBLEmployeeDirectory/admin-index', [BackendController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/BNBLEmployeeDirectory/admin-index', [BackendController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('dashboard', [BackendController::class, 'index'])->middleware(['auth']);
 Route::get('/BNBLEmployeeDirectory/admin-directory',[BackendController::class, 'directory'])->middleware(['auth'])->name('directory');
 Route::get('/BNBLEmployeeDirectory/admin-add-contact', [BackendController::class, 'addContactForm'])->middleware(['auth'])->name('add-contact');
@@ -19,3 +19,8 @@ Route::get('/BNBLEmployeeDirectory/process-contact-request/{id}/{action}', [Cont
 Route::get('/BNBLEmployeeDirectory/{id}/delete/', [ContactController::class, 'deleteContact'])->middleware(['auth'])->name('delete-contact');
 Route::get('/BNBLEmployeeDirectcory/report', [BackendController::class, 'report'])->middleware(['auth'])->name('report');
 Route::post('/BNBLEmployeeDirectory/report', [ContactController::class, 'generateReport'])->middleware(['auth'])->name('generate-report');
+
+Route::get('/users', [BackendController::class, 'user'])->middleware(['auth'])->name('user');
+Route::get('/register', [BackendController::class, 'create'])->middleware(['auth'])->name('register');
+Route::post('/register', [ContactController::class, 'store'])->middleware(['auth']);
+Route::get('/users/{id}/delete', [ContactController::class, 'deleteUser'])->middleware(['auth'])->name('delete-user');

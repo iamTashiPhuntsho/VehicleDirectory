@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 use App\Models\Employee;
 use App\Models\Contact;
@@ -322,5 +325,37 @@ class ContactController extends Controller
     		$msg =  "The Selected CSV file doesnot have the correct header. Please Check your .csv file.";
     		}
     	return back()->with(['status'=>$status,'msg'=>$msg]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+
+        return back()->with(['status'=>1, 'msg'=>"New user has been added to system."]);
+    }
+
+    public function deleteUser (Request $request) {
+        $status = '0';
+        $msg = 'User could not be deleted. Please try again.';
+        $user = User::find($request->id);
+        if($user->delete()){
+            $status = '1';
+            $msg = 'User has been deleted.';
+        }
+        return back()->with(['status'=>$status, 'msg'=>$msg]);
+
     }
 }
