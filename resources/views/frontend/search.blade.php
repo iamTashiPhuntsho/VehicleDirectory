@@ -8,26 +8,36 @@
         	<div class="my-auto">
 			
             
-          		<h2 class="no-case mb-5 ">BNBL Employee Directory</h2>
-	<body onload="load()">
-	 <p>
-	 <div class="box mb-5 container">
-		<div class="box row">
-		   <div class="counter col-sm-3">
-			  <p id='0101' class="fs-2">0</p>
-			  <p>Employee</p>
-		   </div>
-		   <div class="counter col-sm-3">
-			  <p id='0102' class="fs-2">876</p>
-			  <p >Department</p>
-		</div>
-		<div class="counter col-sm-3">
-		   <p class="fs-2"><span id='0103'>12</span></p>
-		   <p class="align-content-center">Extension</p>
-		</div>
-	 </div>
-  </div>
-  </p>
+          	<h2 class="no-case mb-5 ">BNBL Employee Directory</h2>
+			<div class="mb-5">
+				<p class="u-large-text u-text u-text-variant u-text-2"> 
+		BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
+				</p>
+			</div>
+
+	<div class="box wrapper mb-5 container">
+    <div class="counter col_fourth">
+	  <i class="fa-solid fa-users fa-2x"></i>
+	  <p id='0101' class="fs-2 count-title count-number">0</p>
+     
+       <p class="count-text ">Total Employee</p>
+    </div>
+
+    <div class="counter col_fourth">
+	<i class="fa-solid fa-icons fa-2x"></i>
+	  <p id='0102' class="fs-2 count-title count-number">0</p>
+      <p class="count-text">Department</p>
+    </div>
+
+    <div class="counter col_fourth">
+	<i class='fas fa-external-link-alt fa-2x'></i>
+	  <p id='0103' class="fs-2 count-title count-number">0</p>
+      <p class="count-text">Total Branch</p>
+    </div>
+</div>
+
+
+				<body onload="load()">
   <script>
 	 function animate(obj, initVal, lastVal, duration) {
 		let startTime = null;
@@ -69,6 +79,7 @@
 	 }
   </script>
 </body>
+				<h4 class="no-case mb-5 ">Search Full List Of Employee</h4>
 				  <div class="mb-5">
           			<form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                 @csrf
@@ -106,9 +117,9 @@
 
 				
           		</div>
-				  <div>
-          			<p class="search-notification ">
-          				<i class="far fa-bell fa-fw fa-2x"></i>Notification : 
+				  <div class="col-md-12 mb-3 ">
+          			<p class=" u-large-text u-text u-text-variant u-text-2 ">
+          				<i class="far fa-bell fa-fw fa-2x" ></i>Notification: 
           				<br>
           				Keeping all the above fields blank will view all the employees.
           				<br>
