@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="px-16 py-10 bg-white border-b border-gray-200">
-                    <div class="flex items-end gap-5">
+                    <div class="grid md:flex items-end gap-5">
                         <div class="h-32 w-32 overflow-hidden bg-red-300 rounded-full">
                             <img src='{{ asset("storage/employee_images/$employee->image") }}' alt="Employee Profile" id="prev" class="h-full w-full object-cover object-center" />
                         </div>
@@ -14,7 +14,7 @@
                     </div>
                     <form class="user" action="{{ route('update-contact') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="grid grid-cols-3 gap-4 mt-3">
+                        <div class="grid md:grid-cols-3 gap-4 mt-3">
                             <div>
                                 <label for="name" class="text-xs font-semibold text-blue-800">Employee Name</label>
                                 <input type="text" class="w-full" placeholder="Employee Name" name="name" id="name" required autofocus value="{{ $employee->name }}">

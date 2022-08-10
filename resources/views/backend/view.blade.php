@@ -6,11 +6,14 @@
                     <div class="flex justify-between">
                         
                         <div class="p-14 w-full">
-                            <div class="bg-gradient-to-bl from-violet-600 to-orange-600 bg-clip-text p-3">
-                                <h3 class="text-7xl lowercase title text-transparent">{{ $employee->name }}</h3>
+                            <div class="h-44 w-44 rounded-full drop-shadow-md overflow-hidden md:hidden">
+                                <img src='{{ asset("storage/employee_images/$employee->image") }}' class="object-cover w-full h-full"/> 
                             </div>
-                            <div class="flex relative">
-                                <div class="bg-sky-100 shadow-md rounded-2xl title2 p-10 text-slate-700 w-2/3">
+                            <div class="bg-gradient-to-bl from-violet-600 to-orange-600 bg-clip-text p-3">
+                                <h3 class="text-5xl md:text-7xl lowercase title text-transparent">{{ $employee->name }}</h3>
+                            </div>
+                            <div class="lg:flex md:relative">
+                                <div class="bg-sky-100 shadow-md rounded-2xl title2 p-10 text-slate-700 w-full lg:w-2/3">
                                     <div class="flex items-center gap-3 title text-sky-500 mb-3">
                                         <i class="fa-solid fa-id-card-clip text-3xl"></i>
                                         <h3>Office Information</h3>
@@ -37,7 +40,7 @@
                                     </p>
                                 </div>
     
-                                <div class="bg-gradient-to-r from-rose-100 to-transparent drop-shadow-md rounded-2xl title2 p-10 text-slate-700 w-2/3 absolute -right-40 top-3 z-50">
+                                <div class="mt-5 lg:mt-auto bg-gradient-to-r from-rose-100 to-rose-100 lg:to-transparent drop-shadow-md rounded-2xl title2 p-10 text-slate-700 w-full lg:w-2/3 lg:absolute -right-40 top-3 z-50">
                                     <div class="flex items-center gap-3 title text-rose-500 mb-3">
                                         <i class="fa-solid fa-address-card text-3xl"></i>
                                         <h3>Contact Information</h3>
@@ -95,9 +98,9 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="relative w-2/5 h-auto overflow-hidden">
+                        <div class="hidden md:block relative w-full lg:w-2/5 h-auto overflow-hidden">
                             <img src='{{ asset("storage/employee_images/$employee->image") }}' class="object-cover w-full h-full"/> 
-                            <div class="bg-gradient-to-r from-white to-transparent w-2/3 h-full absolute top-0 left-0"></div>
+                            <div class="bg-gradient-to-r from-white to-transparent lg:w-2/3 h-full absolute top-0 left-0"></div>
                             {{-- <div class="bg-gradient-to-t from-white to-transparent w-full h-1/3 absolute bottom-0"></div> --}}
                         </div>
                     </div>

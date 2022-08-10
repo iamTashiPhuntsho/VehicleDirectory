@@ -18,7 +18,7 @@ class BackendController extends Controller
         $admins = User::all();
         $active_contacts = Employee::where('status','active')->count();
         $disabled_contacts = Employee::where('status','disabled')->count();
-        $conts = Employee::orderBy('id','DESC')->limit(5)->get();
+        $conts = Employee::orderBy('id','DESC')->limit(8)->get();
 		$req = ContactRequest::count();
     	return view('backend.index',compact('user','admins','active_contacts','disabled_contacts','conts','req'));
     }
@@ -67,5 +67,16 @@ class BackendController extends Controller
     	$locations = Location::all();
         $verticals = Vertical::all();
         return view('backend.report',compact('user','locations','departments','verticals'));
+    }
+
+    public function user () {
+        $user = Auth::user();
+        $users = User::all();
+        return view('backend.user', compact('user','users'));
+    }
+
+    public function create () {
+        $user = Auth::user();
+        return view('backend.create-user', compact('user'));
     }
 }
