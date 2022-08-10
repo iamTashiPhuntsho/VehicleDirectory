@@ -15,13 +15,14 @@ h2 {
 	width: 100%;
 }
 .search-section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
     min-height: 100vh;
   }
   .search-notification{
-	color: #343a40;
-	font-weight: bold;
+
+   
+   
 }
 
 .box {
@@ -29,43 +30,22 @@ h2 {
     flex-grow: 1;
       flex-shrink: 1;
       flex-basis: auto;
-  
-  
   }
   
   .counter{
     flex: 1 1;
-    height: 6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(86,132,232,.15);
+    background-color: #fff;
+    border-radius: 6px;
   
-    margin: 10px; 
-    padding-top: 8px;
-    text-align: center; 
-    font-size: 15px;
-    
-    border-radius: 1rem;
-    font-weight: 600;
-    color: #585858;
-    width: 20rem;
-
-
-
-align-items: center;
-cursor: pointer;
-box-shadow: 0 4px 15px rgba(86,132,232,.15);
-background-color: #fff;
-border-radius: 6px;
-color: #404040;
-width: 100%;
   }
   
    .counter:hover{
     box-shadow: 3px 3px 10px #3066A6;
     transition-duration: 1s;
    }
-   .fs-2 {
-    font-size: calc(0.5rem + .9vw)!important;
-}
-  
+
 .form-control{
     border-radius: 2rem;
     text-align: center;
@@ -82,11 +62,74 @@ width: 100%;
   font-size: 16px;
 }
 
+.u-text-2 {
+  font-size: 1rem;
+  width: 691px;
+  margin: 12px auto 0;
+  text-align: center;
+}
 
 .row {
     --bs-gutter-x: 0.5rem;
-   
+  
 }
+
+
+.col_half { width: 49%; }
+.col_third { width: 32%; }
+.col_fourth { width: 23.5%; }
+.col_fifth { width: 18.4%; }
+.col_sixth { width: 15%; }
+.col_three_fourth { width: 74.5%;}
+.col_twothird{ width: 66%;}
+.col_half,
+.col_third,
+.col_twothird,
+.col_fourth,
+.col_three_fourth,
+.col_fifth{
+	position: relative;
+	display:inline;
+	display: inline-block;
+	float: left;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+
+
+
+.wrapper { 
+  width: 100%; 
+  margin: 30px auto; 
+  position: relative;
+}
+.counter { 
+  background-color: #ffffff; 
+  padding: 20px 0; 
+  border-radius: 5px;
+}
+.count-title { 
+  font-size: 1rem; 
+  font-weight: normal;  
+  margin-top: 10px; 
+  margin-bottom: 0; 
+  text-align: center;
+ }
+.count-text { 
+  font-size: 13px; 
+  font-weight: normal;  
+  margin-top: 10px; 
+  margin-bottom: 0; 
+  text-align: center; 
+}
+.fa-2x { 
+  margin: 0 auto; 
+  float: none; 
+  display: table; 
+  color: #4ad1e5; 
+
+}
+
 
 
 
