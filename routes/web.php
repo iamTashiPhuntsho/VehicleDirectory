@@ -29,10 +29,12 @@ Route::post('/BNBLEmployeeDirectory', 'App\Http\Controllers\DirectoryController@
 
 //Routes for vehicle directory
 // Route::get('/', 'App\Http\Controllers\VehicleController@getDirectorySearch');
-Route::get('/BNBLEmployeeVehicle/vehicle', 'App\Http\Controllers\VehicleController@getDirectorySearch')->name('get_vehicle_path');
-Route::get('/BNBLEmployeeVehicley/vehicleresult', 'App\Http\Controllers\VehicleController@getResult')->name('vehicle_path');
-Route::get('/BNBLEmployeeVehicle/vehicleresult/{id}/show/{ename}/{location}/{department}', 'App\Http\Controllers\VehicleController@getShow')->name('show_vehicle_path');
-Route::post('/BNBLEmployeeVehicle', 'App\Http\Controllers\VehicleController@searchDirectory@searchDirectory')->name('search_vehicle_path');
+Route::get('/BNBLEmployeeVehicle/vehicle', 'App\Http\Controllers\VehicleController@vehicle')->name('get_vehicle_path');
+Route::get('BNBLEmployeeVehicle/vehicle/search/', 'App\Http\Controllers\VehicleController@search')->name('search');
+
+// Route::get('/BNBLEmployeeVehicley/vehicleresult', 'App\Http\Controllers\VehicleController@getResult')->name('vehicle_path');
+// Route::get('/BNBLEmployeeVehicle/vehicleresult/{id}/show/{ename}/{location}/{department}', 'App\Http\Controllers\VehicleController@getShow')->name('show_vehicle_path');
+// Route::post('/BNBLEmployeeVehicle', 'App\Http\Controllers\VehicleController@searchDirectory@searchDirectory')->name('search_vehicle_path');
 
 /*
 |----------------------------------------------------------------------------------
