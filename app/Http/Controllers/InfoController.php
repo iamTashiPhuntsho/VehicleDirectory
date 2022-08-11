@@ -9,6 +9,7 @@ use App\Models\Department;
 use App\Models\Vehicle;
 use App\Models\Location;
 use App\Mail\SendOTP;
+use App\Mail\OTPSent;
 use App\Models\ContactRequest;
 use App\Models\Signin;
 use Carbon\Carbon;
@@ -77,7 +78,7 @@ class InfoController extends Controller
             if($stat)
             {
                 $email = Contact::where('employee_id',$id)->value('email');
-                Mail::to($email)->send(new SendOTP($otp,$eid));
+                Mail::to($email)->send(new OTPSent($otp,$eid));
                 $msg = "OTP has been sent to your Registered Email ID. Please Check your email for OTP";
                 return redirect()->route('otp_path',Crypt::encryptString($request->employeeid))->with(['status'=>'1','msg'=>$msg]);
             }

@@ -38,7 +38,7 @@
             		<a href="#" class="mb-3">
 					<i class="fa-duotone fa-car"></i>
             		</a>
-					<h3>Vehicle Number : {{ blank($record->contact->vehicle_number) ? "Information Unavailable" : $record->contact->vehicle_number}}</h3>
+					<h3>Vehicle Number : {{ blank($record->vehicle_no) ? "Information Unavailable" : $record->vehicle_no}}</h3>
             		<br>
             		<a href="#" class="mb-3">
               			<i class="fas fa-map-marker-alt"></i>
@@ -48,7 +48,7 @@
 					<a href="#" class="mb-3">
               			<i class="fas fa-map-marker-alt"></i>
             		</a>
-					<h3>Present Address : {{ $record->contact->present_address }}</h3>
+					<h3>Present Address : {{ $record->present_address }}</h3>
           		</div>
           		<br>
           		<small>If your information is invalid, Please click <a href="{{ route('login_info_path') }}">HERE</a> to edit your information or contact System Administrator at 1277 | 1265.</small>
