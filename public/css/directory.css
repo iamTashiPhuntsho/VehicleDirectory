@@ -110,7 +110,7 @@ h2 {
   text-align: center;
  }
 .count-text { 
-  font-size: 0.7rem; 
+  font-size: 0.9rem; 
   font-weight: normal;  
   margin-top: 10px; 
   margin-bottom: 0; 
@@ -120,7 +120,14 @@ h2 {
   margin: 0 auto; 
   float: none; 
   display: table; 
-  color: #4ad1e5; 
+  color: #4ad1e5;
+
+}
+.fa-1x{
+  margin: 0 auto; 
+  float: none; 
+  display: table; 
+  color: #4ad1e5;
 }
 .fs-2 {
   font-size: calc(0.5rem + .9vw) !important;
@@ -250,3 +257,8 @@ cursor: pointer;
 box-shadow: 0 4px 15px rgba(86,132,232,.15);
 }
 
+.header_title{
+  font-weight: 600;
+  color: #FEB139;
+  font-size: 1rem;
+}

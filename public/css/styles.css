@@ -209,7 +209,7 @@ height: 50px;
 
 }
 .show{
-  width: calc(var(--nav-width) + 185px);
+  width: calc(var(--nav-width) + 160px);
 }
 
 .body-pd{

@@ -6,7 +6,7 @@
             <div class="container-fluid p-0">
                <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
                   <div class="my-auto">
-                     <h2 class="no-case mb-5 ">BNBL Employee Directory</h2>
+                     <h2 class="no-case mb-5 ">Search Full List Of Employee</h2>
                      <div class="mb-5">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
@@ -71,7 +71,7 @@
                            }
                         </script>
                      </body>
-                     <h4 class="no-case mb-5 ">Search Full List Of Employee</h4>
+                     
                      <div class="mb-5">
                         <form class="d-block" action="" method="POST">
                            <div class="row mb-3 form-row">
@@ -101,7 +101,7 @@
                         </select>
                         </div>
                         <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search"></i>search</button>
+                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search" style="margin-right: 10px;"></i>search</button>
                         </div>
                         </div>
                         </form>

@@ -18,13 +18,13 @@
                      <form class="mx-1 mx-md-4" action="{{ route('sign_search_directory_path') }}" method="POST">
                         @csrf
                         <div class="d-flex flex-row align-items-center mb-4">
-                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                           <i class="fas fa-user fa-lg me-3 fa-fw fa-1x"></i>
                            <div class="form-outline flex-fill mb-0">
                               <input type="text" name="employee_id" class="form-control form-sz-lg" placeholder="Enter your Employee ID" maxlength="10">
                            </div>
                         </div>
-                        <div class="button col-sm-7 d-flex justify-content-center ">
-                           <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" >Generate Mail Signature</button>
+                        <div class="button col-sm-6 d-flex justify-content-center ">
+                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" >Generate</button>
                         </div>
                         @if ($errors->any())
                         @foreach ($errors->all() as $error)
