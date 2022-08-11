@@ -14,10 +14,12 @@
         <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
   rel="stylesheet"  type='text/css'>
+  
         <!-- Fonts -->
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         <!-- Scripts -->
+        
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body id="body-pd" class="font-sans antialiased">
