@@ -12,7 +12,7 @@
         <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/directory.css') }}>
         <link 
-  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  {{-- href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"  --}}
   rel="stylesheet"  type='text/css'>
         <!-- Fonts -->
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
@@ -21,9 +21,9 @@
         
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
-    <body id="body-pd" class="font-sans antialiased">
+    <body id="" class="font-sans antialiased">
         
-        <div class="min-h-screen bg-gray-100">
+        <div class="bg-gray-100">
 
             <!-- Page Content -->
             <main>
@@ -34,5 +34,6 @@
             </main>
         </div>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/alert.js') }}"></script>
     </body>
 </html>
