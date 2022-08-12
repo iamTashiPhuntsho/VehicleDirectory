@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\SignatureController;
+use App\Http\Controllers\InfoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,46 +23,44 @@ require __DIR__.'/backend.php';
 
 
 // Route::get('/home', 'HomeControl@geler@index')->name('home');
-Route::get('/', 'App\Http\Controllers\DirectoryController@getDirectorySearch');
-Route::get('/BNBLEmployeeDirectory', 'App\Http\Controllers\DirectoryController@getDirectorySearch')->name('get_search_path');
-Route::get('/BNBLEmployeeDirectory/result', 'App\Http\Controllers\DirectoryController@getResult')->name('result_path');
-Route::get('/BNBLEmployeeDirectory/result/{id}/show/{ename}/{location}/{department}', 'App\Http\Controllers\DirectoryController@getShow')->name('show_result_path');
-Route::post('/BNBLEmployeeDirectory', 'App\Http\Controllers\DirectoryController@searchDirectory')->name('search_directory_path');
+Route::get('/', [DirectoryController::class, 'getDirectorySearch']);
+Route::get('/BNBLEmployeeDirectory', [DirectoryController::class, 'getDirectorySearch'])->name('get_search_path');
+Route::get('/BNBLEmployeeDirectory/result', [DirectoryController::class, 'getResult'])->name('result_path');
+Route::get('/BNBLEmployeeDirectory/result/{id}/show/{ename}/{location}/{department}', [DirectoryController::class, 'getShow'])->name('show_result_path');
+Route::post('/BNBLEmployeeDirectory', [DirectoryController::class, 'searchDirectory'])->name('search_directory_path');
 
 //Routes for vehicle directory
-// Route::get('/', 'App\Http\Controllers\VehicleController@getDirectorySearch');
-Route::get('/BNBLEmployeeVehicle/vehicle', 'App\Http\Controllers\VehicleController@vehicle')->name('get_vehicle_path');
-Route::get('BNBLEmployeeVehicle/vehicle/search/', 'App\Http\Controllers\VehicleController@search')->name('search');
-
-// Route::get('/BNBLEmployeeVehicley/vehicleresult', 'App\Http\Controllers\VehicleController@getResult')->name('vehicle_path');
-// Route::get('/BNBLEmployeeVehicle/vehicleresult/{id}/show/{ename}/{location}/{department}', 'App\Http\Controllers\VehicleController@getShow')->name('show_vehicle_path');
-// Route::post('/BNBLEmployeeVehicle', 'App\Http\Controllers\VehicleController@searchDirectory@searchDirectory')->name('search_vehicle_path');
+Route::get('/BNBLEmployeeVehicle/vehicle', [VehicleController::class, 'vehicle'])->name('get_vehicle_path');
+Route::get('/BNBLEmployeeVehicle/vehicle/search', [VehicleController::class, 'search'])->name('search');
+Route::get('/BNBLEmployeeVehicley/vehicleresult', [VehicleController::class, 'getResult'])->name('vehicle_path');
+Route::get('/BNBLEmployeeVehicle/vehicleresult/{id}/show/{ename}/{location}/{department}', [VehicleController::class, 'getShow'])->name('show_vehicle_path');
+Route::post('/BNBLEmployeeVehicle', [VehicleController::class, 'searchDirectory@searchDirectory'])->name('search_vehicle_path');
 
 /*
 |----------------------------------------------------------------------------------
 | Routes for Employee Information Edit
 |----------------------------------------------------------------------------------
 */ 
-Route::get('/BNBLEmployeeDirectory/edit', 'App\Http\Controllers\InfoController@getEmployee')->name('login_info_path');
-Route::get('/BNBLEmployeeDirectory/otp-verification/{eid}', 'App\Http\Controllers\InfoController@getOtp')->name('otp_path');
-Route::get('/BNBLEmployeeDirectory/edit/{eid}/info', 'App\Http\Controllers\InfoController@getEditForm')->name('edit_info_path');
-Route::post('/BNBLEmployeeDirectory/otp-verification', 'App\Http\Controllers\InfoController@sendOTP')->name('get_employee_and_send_otp_path');
-Route::post('BNBLEmployeeDirectory/verify_otp', 'App\Http\Controllers\InfoController@verifyOTP')->name('verify_otp_path');
-Route::post('BNBLEmployeeDirectory/update-employee-info', 'App\Http\Controllers\InfoController@updateInfo')->name('update_employee_info_path');
+Route::get('/BNBLEmployeeDirectory/edit', [InfoController::class, 'getEmployee'])->name('login_info_path');
+Route::get('/BNBLEmployeeDirectory/otp-verification/{eid}', [InfoController::class, 'getOtp'])->name('otp_path');
+Route::get('/BNBLEmployeeDirectory/edit/{eid}/info', [InfoController::class, 'getEditForm'])->name('edit_info_path');
+Route::post('/BNBLEmployeeDirectory/otp-verification', [InfoController::class, 'sendOTP'])->name('get_employee_and_send_otp_path');
+Route::post('BNBLEmployeeDirectory/verify_otp', [InfoController::class, 'verifyOTP'])->name('verify_otp_path');
+Route::post('BNBLEmployeeDirectory/update-employee-info', [InfoController::class, 'updateInfo'])->name('update_employee_info_path');
 /*
 |----------------------------------------------------------------------------------
 |Routes for Employee Registration
 |----------------------------------------------------------------------------------
 */ 
-Route::get('BNBLEmployeeDirectory/registration', 'App\Http\Controllers\InfoController@getRegistration')->name('employee_registration_path');
-Route::post('BNBLEmployeeDirectory/registration', 'App\Http\Controllers\InfoController@sendAdditionRequest')->name('contact_addition_request_path');
+Route::get('BNBLEmployeeDirectory/registration', [InfoController::class, 'getRegistration'])->name('employee_registration_path');
+Route::post('BNBLEmployeeDirectory/registration', [InfoController::class, 'sendAdditionRequest'])->name('contact_addition_request_path');
 
 /*
 |----------------------------------------------------------------------------------
 | Routes for Mail Signature Generator
 |----------------------------------------------------------------------------------
 */ 
-Route::get('MailSignatureGenerator/search','App\Http\Controllers\SignatureController@getSearch')->name('sign_index_path');
-Route::post('MailSignatureGenerator/generate-sign', 'App\Http\Controllers\SignatureController@searchDirectory')->name('sign_search_directory_path');
-Route::get('MailSignatureGenerator/generate-sign-code', 'App\Http\Controllers\SignatureController@generateCode')->name('get_signature_code_path');
+Route::get('MailSignatureGenerator/search', [SignatureController::class, 'getSearch'])->name('sign_index_path');
+Route::post('MailSignatureGenerator/generate-sign',  [SignatureController::class, 'searchDirectory'])->name('sign_search_directory_path');
+Route::get('MailSignatureGenerator/generate-sign-code',  [SignatureController::class, 'generateCode'])->name('get_signature_code_path');
 

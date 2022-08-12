@@ -22,8 +22,7 @@ class VehicleController extends Controller
     
         // Search in the title and body columns from the posts table
         $employees = Employee::query()
-            ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('vehicle_no', 'LIKE', "%{$search}%")
+            ->Where('vehicle_no', 'LIKE', "%{$search}%")
             ->get();
     
         // Return the search view with the resluts compacted

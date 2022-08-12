@@ -7,7 +7,7 @@
     	</div>
 		<br>
 	<form action="{{ route('search') }}" method="GET">
-    <input type="text" name="search" required/>
+    <input type="text" name="search" placeholder="Ex. BP-0-A0000" required/>
     <button type="submit">Search</button>
     </form>
     	<div class="card-body">
@@ -21,7 +21,9 @@
             				<th>Department</th>
             				<th>Job Title</th>
                     <th>Extension</th>
+						    <th>Mobile Number</th>
             				<th>Vehicle Number</th>
+							<th>Email</th>
             			</tr>
           			</thead>
           			<tbody>
@@ -39,7 +41,9 @@
                       <td>{{ $employee->department->name }}</td>
                       <td>{{ $employee->title }}</td>
                       <td>{{ $employee->contact->extension }}</td>
+					  <td>{{ $employee->contact->mobile }}</td>
 					  <td>{{ $employee->vehicle_no }}</td>
+					  <td>{{ $employee->contact->email }}</td>
                     </tr>
                   @endforeach
           			</tbody>

@@ -15,17 +15,17 @@
                      <div class="box wrapper mb-5 container">
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-users fa-2x"></i>
-                           <p id='0101' class="fs-2 count-title count-number">0</p>
+                           <p id='0101' class="fs-2 count-title count-number">{{ count($employees) }}</p>
                            <p class="count-text ">Total Employee</p>
                         </div>
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-icons fa-2x"></i>
-                           <p id='0102' class="fs-2 count-title count-number">0</p>
+                           <p id='0102' class="fs-2 count-title count-number">{{count($departments)}}</p>
                            <p class="count-text">Department</p>
                         </div>
                         <div class="counter col_fourth">
                            <i class='fas fa-external-link-alt fa-2x'></i>
-                           <p id='0103' class="fs-2 count-title count-number">0</p>
+                           <p id='0103' class="fs-2 count-title count-number">{{count($locations)}}</p>
                            <p class="count-text">Total Branch</p>
                         </div>
                      </div>
@@ -65,9 +65,9 @@
                            let text2 = document.getElementById('0102');
                            let text3 = document.getElementById('0103');
                            const load = () => {
-                           animate(text1, 0, 511, 7000);
-                           animate(text2, 0, 232, 7000);
-                           animate(text3, 100, 25, 7000);
+                           animate(text1, 200, {{count($employees)}}, 7000);
+                           animate(text2, 0, {{count($departments)}}, 4000);
+                           animate(text3, 100, {{count($locations)}}, 7000);
                            }
                         </script>
                      </body>

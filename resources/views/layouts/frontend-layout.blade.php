@@ -12,7 +12,7 @@
         <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/directory.css') }}>
         <link 
-  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  {{-- href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"  --}}
   rel="stylesheet"  type='text/css'>
   
         <!-- Fonts -->
@@ -22,7 +22,7 @@
         
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
-    <body id="body-pd" class="font-sans antialiased">
+    <body id="" class="font-sans antialiased">
         
         <div class="min-h-screen bg-gray-100">
 
