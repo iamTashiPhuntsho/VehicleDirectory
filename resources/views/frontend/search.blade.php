@@ -73,7 +73,7 @@
                      </body>
                      
                      <div class="mb-5">
-                        <form class="d-block" action="" method="POST">
+                       
                            <div class="row mb-3 form-row">
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
@@ -124,10 +124,4 @@
          </div>
       </div>
    </div>
-
-   <button class="btn">
-	
-   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-   <span class="buy">Get now</span>
- </button>
 </x-frontend-layout>
