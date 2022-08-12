@@ -101,7 +101,7 @@
                         </select>
                         </div>
                         <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search" style="margin-right: 10px;"></i>search</button>
+                        <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" ><i class="fas fa-search" style="margin-right: 10px;"></i>search</button>
                         </div>
                         </div>
                         </form>
@@ -124,4 +124,10 @@
          </div>
       </div>
    </div>
+
+   <button class="btn">
+	
+   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+   <span class="buy">Get now</span>
+ </button>
 </x-frontend-layout>

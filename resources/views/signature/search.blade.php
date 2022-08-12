@@ -24,7 +24,7 @@
                            </div>
                         </div>
                         <div class="button col-sm-6 d-flex justify-content-center ">
-                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" >Generate</button>
+                        <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" >Generate</button>
                         </div>
                         @if ($errors->any())
                         @foreach ($errors->all() as $error)

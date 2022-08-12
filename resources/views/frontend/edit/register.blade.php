@@ -91,7 +91,7 @@
                       <div class="row">
                   
                         <div class="col-sm-3">
-								          <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" >Submit for Approval</button>
+								          <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" >Submit for Approval</button>
           					    </div>
                       
                    
