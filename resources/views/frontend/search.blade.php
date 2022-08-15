@@ -7,7 +7,7 @@
                <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
                   <div class="my-auto">
                      <h2 class="no-case mb-5 ">Search Full List Of Employee</h2>
-                     <div class="mb-5">
+                     <div class="mb-3">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
                         </p>
@@ -73,7 +73,7 @@
                      </body>
                      
                      <div class="mb-5">
-                        <form class="d-block" action="" method="POST">
+                       
                            <div class="row mb-3 form-row">
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
@@ -127,10 +127,4 @@
          </div>
       </div>
    </div>
-
-   <button class="btn">
-	
-   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-   <span class="buy">Get now</span>
- </button>
 </x-frontend-layout>

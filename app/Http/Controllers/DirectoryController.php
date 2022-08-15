@@ -30,7 +30,8 @@ class DirectoryController extends Controller
         $param_name = Crypt::decryptString($request->ename);
         $param_department = Crypt::decryptString($request->department);
         $param_location =Crypt::decryptString($request->location);
-    	return view('frontend.show',compact('no','record','param_location','param_name','param_department'));
+        $employee = Employee::with('contact')->find($request->id);
+    	return view('frontend.show',compact('no','record','param_location','param_name','param_department','employee'));
     }
 
     public function searchDirectory(Request $request){

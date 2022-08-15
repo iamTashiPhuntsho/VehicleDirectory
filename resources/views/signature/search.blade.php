@@ -2,7 +2,7 @@
    <x-sidebar />
    <div class="p-5">
       <h2 class="no-case mb-5 ">Generate Digital Mail Signature</h2>
-      <div class="mb-5">
+      <div class="mb-3">
          <div class="col-sm-12">
             <p class="u-large-text u-text u-text-variant u-text-2"> 
                Mail Signature Generator will generate your mail signature based on the contact information that you have provided in the Employee Directory. Please make sure your information in Employee Directory is updated.

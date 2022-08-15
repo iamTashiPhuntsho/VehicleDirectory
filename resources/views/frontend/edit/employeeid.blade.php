@@ -2,7 +2,7 @@
    <x-sidebar />
    <div class="p-5">
       <h2 class="no-case mb-5 ">Edit Your Profile On Employee Directory</h2>
-      <div class="mb-5">
+      <div class="mb-3">
          <div class="col-sm-12">
             <p class="u-large-text u-text u-text-variant u-text-2"> 
                You can edit the Basic fields like Name, Email ID. You can also edit the work information like Employee ID, Employee Status, etc., Other things you can edit includes, 

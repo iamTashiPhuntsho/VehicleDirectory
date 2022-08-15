@@ -1,51 +1,49 @@
 <x-frontend-layout>
     <x-sidebar/>
 	<div class="p-5">
-   <h1 class="mb-5"> 
-      {{ $record->name }}
-   </h1>
-   <div class="col-lg-12">
-      <div class="card text-black" style="border-radius: 15px;">
-         <div class="card-body">
-            <div class="row">
-            <span class="d-none d-lg-block">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='{{asset ("storage/employee_images/$record->image")}}' alt="">
-        	</span>
-               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  
-                  <h6>Extension : {{ blank($record->contact->extension) ? "Information Unavailable" : $record->contact->extension }}</h6>
-                  
-                 
-                  <h6>Mobile Number : {{ blank($record->contact->mobile) ? "Information Unavailable" : $record->contact->mobile }}</h6>
-                  
-               
-                   
-                     <h6>Email ID : <span class="text-bnb-blue lowercase">{{ blank($record->contact->email) ? "Information Unavailable" : $record->contact->email }}</span></h6>
-					 <h6>Designation :{{$record->designation}}</h3>
-					 <h6>Department: {{$record->department->name}}</h3>
+    <div class="cards-5 section-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-profile mb-5">
+                            <div class="card-avatar">
+                                <a href="#"> <img class="img" src='{{asset ("storage/employee_images/$record->image")}}'> </a>
+                            </div>
+                            <div class="table">
+                                <h3 class="card-caption">  {{ $record->name }}</h3>
+                            
+                                <h4 class="h4 category text-muted mb-5">{{$record->title}} / {{$record->designation}}</h4>
+        
+                                <p><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
+        <p><i class="fa-solid fa-diagram-project fa-lg" style="margin-right: 5px;"></i>Department : <span>{{$record->department->name}}</span></p>
+        <p><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ blank($record->contact->email) ? "Information Unavailable" : $record->contact->email }}</span></p>
+        <p><i class="fa-solid fa-phone fa-lg" style="margin-right: 5px;"></i>Extension : <span>{{ blank($record->contact->extension) ? "Information Unavailable" : $record->contact->extension }}</span></p>
+        <p><i class='fa fa-mobile-phone fa-lg' style="margin-right: 5px;" ></i>Mobile Number : <span>{{ blank($record->contact->mobile) ? "Information Unavailable" : $record->contact->mobile }}</span></p>
+        <p><i class="fa-solid fa-cube fa-lg" style="margin-right: 5px;"></i>Flexcube User ID : <span> {{ blank($record->contact->flexcube) ? "Information Unavailable" : $record->contact->flexcube }}</span></p>
+
+        <p><i class="fa-solid fa-car-side fa-lg" style="margin-right: 5px;"></i>Vehicle Number : <span> {{ blank($record->vehicle_no) ?"Information Unavailable" : $record->vehicle_no}}</span></p>
+            		
+            	<p> <i class="fa-solid fa-location-dot fa-lg" style="margin-right: 5px;"></i>Location : <span> {{ $record->contact->location->name }}</span></p>
+            		<p><i class="fa-solid fa-map-pin fa-lg"style="margin-right: 5px;"></i>Present Address : <span> {{ $record->present_address }} </span></p>
+					
 				
-               </div>
-               <div class="col-md-10 col-lg-6 col-xl-7 align-items-center order-1 order-lg-2">
-			   <h6>Flexcube User ID : <span class="text-bnb-blue no-case"> {{ blank($record->contact->flexcube) ? "Information Unavailable" : $record->contact->flexcube }}</span></h6>
-          
-                
-                  <h6>Vehicle Number : {{ blank($record->vehicle_no) ? "Information Unavailable" : $record->vehicle_no}}</h6>
-         
-                 
-                  <h6>Location : {{ $record->contact->location->name }}</h6>
-                
-                
-                  <h6>Present Address : {{ $record->present_address }}</h6>
-				  <h6>Job Title : {{$record->title}}</h6>
-               </div>
+            
+			
+        
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <br>
-          		<small>If your information is invalid, Please click <a href="{{ route('login_info_path') }}">HERE</a> to edit your information or contact System Administrator at 1277 | 1265.</small>
+        </div>
+        <div>
+<small  class="mb-5">If your information is invalid, Please click <a href="{{ route('login_info_path') }}">HERE</a> to edit your information or contact System Administrator at 1277 | 1265.</small>
+
 </div>
-</div>
+    </div>
+
+
 
 
 

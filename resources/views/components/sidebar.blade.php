@@ -50,10 +50,15 @@
       <nav class="nav">
          <div>
             
-            <a href="#" class="nav_logo"> 
-            <span class="nav_logo-name"> </span> 
-            </a>
+           
+      </a>
             <div class="nav_list"> 
+            <a href="#"> 
+            
+            <span class="d-none d-lg-block">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{asset ('images/bnb.png')}}" alt="">
+        	</span>
+      </a>
                <a href="{{ route('get_search_path') }}" class="nav_link"><i class='fas fa-home'></i> <span class="nav_name">Dashboard</span> </a> 
                <a href="{{ route('get_vehicle_path') }}" class="nav_link"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
                <a href="{{ route('login_info_path') }}" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name ">Edit Information</span> </a>
