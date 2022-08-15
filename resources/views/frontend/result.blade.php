@@ -2,7 +2,7 @@
    <x-sidebar />
    <div class="p-5">
       <h2 class="no-case mb-5 ">Key Employees Search Result</h2>
-      <div class="mb-5">
+      <div class="mb-3">
          <p class="u-large-text u-text u-text-variant u-text-2"> 
             BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
          </p>
@@ -63,7 +63,7 @@
                            <small class="mb-0 t-3 mt-lg-0" style="color:#0061ff; font-size:12px;">click to view detail <i class="fas fa-arrow-right"></i></small>
 
                         </div>
-                        <div class="col-md-10 col-lg-6 col-xl-3 align-items-center order-1 order-lg-1">
+                        <div class="col-md-10 col-lg-6 col-xl-3 align-items-center order-1 order-lg-1 result-img">
                            <img src='{{ asset("storage/employee_images/$r->image") }}' style="max-width: 5rem" class="card-img-top rounded-circle " alt="...">
                         </div>
                      </div>

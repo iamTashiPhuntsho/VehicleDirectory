@@ -2,9 +2,9 @@
     <x-sidebar />
 
     <div class="p-5">
-          <h2 class="no-case mb-5 ">Contact Information Registration</h2>
+          <h2 class="no-case mb-3">Contact Information Registration</h2>
         
-        <div class="col-lg-12 mb-5">
+        <div class="col-lg-12">
         <div class="card text-black" style="border-radius: 15px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
