@@ -73,8 +73,7 @@
                      </body>
                      
                      <div class="mb-5">
-                       
-                           <div class="row mb-3 form-row">
+                        
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
                         <div class="row mb-3">
@@ -103,9 +102,11 @@
                         @endforeach
                         </select>
                         </div>
-                        <div class="col-sm-1">
-                        <button type="submit" class="form-control form-sz-lg btn btn-block " >
-                           <i class="fas fa-search fa-lg" style="margin-right: 10px;"></i></button>
+                        <div class="col-sm-2">
+                           <input type="text" placeholder="Vehicle Number" class="form-control form-sz-lg" name="vehicle_no"> 
+                        </div>
+                        <div class="col-sm-2">
+                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search"></i>search</button>
                         </div>
                         </div>
                         </form>
