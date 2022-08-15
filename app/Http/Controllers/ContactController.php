@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 use App\Models\Employee;
 use App\Models\Contact;
 use App\Models\Signin;
 use App\Models\ContactRequest;
+use App\Exports\ReportExport;
 use Storage;
+use Excel;
 
 class ContactController extends Controller
 {
@@ -217,5 +222,140 @@ class ContactController extends Controller
             }
         }
         return redirect()->route('directory')->with(['status'=>$status, 'msg'=>$msg]);
+    }
+
+    public function generateReport(Request $request){
+        $header_state = $header = '';
+
+        if($request->all){
+            $header_state = 'all';
+        }
+        elseif(!blank($request->column))
+        {
+            $header_state = 'selected';
+            $header = $request->column;
+        }
+        else{
+            return redirect()->route('report');
+        }
+        $name = $request->form_name;
+        $employee_id = $request->form_employee_id;
+        $title = $request->form_title;
+        $department = $request->form_department;
+        $location = $request->form_location;
+        $status = $request->form_status;
+        
+        $l_records = Contact::when($location, function ($query, $location) { 
+            $query->where('location_id', $location);
+        })
+        ->pluck('employee_id');
+        
+
+        $records = Employee::when($name, function ($query, $name) {
+            $query->where('name','like', "%$name%");
+        })
+        ->when($employee_id, function ($query, $employee_id) {
+            $query->where('employee_id', 'like', "%$employee_id%");
+        }) 
+        ->when($title, function ($query, $title) {
+            $query->where('title', 'like', "%$title%");
+        }) 
+        ->when($department, function ($query, $department) {
+            $query->where('department_id', "$department");
+        })
+        ->when($status, function ($query, $status) {
+            $query->where('status', "$status");
+        })
+        ->whereIn('id', $l_records)->get();
+
+        return Excel::download(new ReportExport ($records,$header_state, $header), 'Report.xlsx');
+        // return view('backend.report-xlsx', compact('records','header_state', 'header'));
+    }
+
+    public function bulkUpload(Request $request){
+    	$status = '0';
+    	$file = $request->file('contact');
+        $csvData = file_get_contents($file);
+        $rows = array_map('str_getcsv',explode("\n", $csvData));
+        $header = array_shift($rows);
+        $check = ['Name','Employee ID','Designation','Job Title','Department','Extension','Mobile','Email','Flexcube','Location','Present Address','Vehicle Number','Profile'];
+        if($header == $check)
+        {
+            foreach($rows as $row){
+                if(count($row) == count($header))
+                {
+                    $row = array_combine($header, $row);
+                    $employee = new Employee;
+                    $contact = new Contact;
+                    $signin = new Signin;
+                    $employee->name = $row['Name'];
+                    $employee->employee_id = $row['Employee ID'];
+                    $employee->designation = $row['Designation'];
+                    $employee->title = $row['Job Title'];
+                    $employee->department_id = $row['Department'];
+                    $employee->image = $row['Profile'];
+                    $employee->present_address = $row['Present Address'];
+                    $employee->vehicle_no = $row['Vehicle Number'];
+                    if($employee->save())
+                    {
+                    	$contact->email = $row['Email'];
+			    		$contact->mobile = $row['Mobile'];
+			    		$contact->extension = $row['Extension'];
+			    		$contact->flexcube = $row['Flexcube'];
+			    		$contact->location_id = $row['Location'];
+			    		$contact->employee_id = $employee->id;
+			    		$contact->save();
+                        
+                        $signin->employee_id = $employee->id;
+                        $signin->save();
+			    		
+                        $status = '1';
+			    		$msg = "Contact Information has been Successfully uploaded from CSV file.";	
+                	}
+                	else{
+                		$msg = "Contact Information couldnot be imported from CSV file.";
+                    }
+                }
+                else{
+                    $msg = "CSV file doesn't have correct content";
+                }
+            }
+        }
+		else{
+    		$msg =  "The Selected CSV file doesnot have the correct header. Please Check your .csv file.";
+    		}
+    	return back()->with(['status'=>$status,'msg'=>$msg]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+
+        return back()->with(['status'=>1, 'msg'=>"New user has been added to system."]);
+    }
+
+    public function deleteUser (Request $request) {
+        $status = '0';
+        $msg = 'User could not be deleted. Please try again.';
+        $user = User::find($request->id);
+        if($user->delete()){
+            $status = '1';
+            $msg = 'User has been deleted.';
+        }
+        return back()->with(['status'=>$status, 'msg'=>$msg]);
+
     }
 }

@@ -67,7 +67,11 @@
                     <i class="fas fa-user-shield"></i>
                 </a>
                 <h3>Flexcube User ID : <span class="text-bnb-blue no-case"> <input type="text" name="flexcube" value="{{ $record->contact->flexcube }}" class="lg-input" ></span></h3>
-          
+                <br>
+                <a href="#" class="mb-3">
+                    <i class="fas fa-user-shield"></i>
+                </a>
+                <h3>Vehicle Number : <span class="text-bnb-blue no-case"> <input type="text" name="vehicle_number" value="{{ $record->vehicle_no }}" class="lg-input" ></span></h3>
                 <hr>
                 <a href="#">
                     <i class="fas fa-map-marker-alt"></i>
@@ -85,7 +89,12 @@
                     @endforeach 
                   </select>
                 </h3>
-                
+                <br>
+                <a href="#" class="mb-3">
+                    <i class="fas fa-user-shield"></i>
+                </a>
+                <h3>Present Address : <span class="text-bnb-blue no-case"> <input type="text" name="present_address" value="{{ $record->present_address }}" class="lg-input" ></span></h3>
+                <hr>
                 <hr>
                 <div class="btn-group">
                   <button type=" submit" value="11" name="btn" class="btn btn-lg bg-bnb-blue text-white"><i class="fas fa-save"></i> Save Information and Exit</button>

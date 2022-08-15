@@ -44,14 +44,14 @@
    </script> 
    <header class="header" id="header">
       <div class="header_toggle"><i class="fas fa-bars" id="header-toggle"></i> </div>
-      <span class="header_title">BNBL Employee Directory</span>
+      <div class="header_img"> <img src="{{asset ('images/bnb.png')}}" alt=""></div>
    </header>
    <div class="l-navbar" id="nav-bar">
       <nav class="nav">
          <div>
-            
+            <div class="header_img"> <img src="{{asset ('images/bnb.png')}}" alt=""></div>
             <a href="#" class="nav_logo"> 
-            <span class="nav_logo-name"> </span> 
+            <span class="nav_logo-name">Employee Directory </span> 
             </a>
             <div class="nav_list"> 
                <a href="{{ route('get_search_path') }}" class="nav_link active"><i class='fas fa-home'></i> <span class="nav_name">Dashboard</span> </a> 

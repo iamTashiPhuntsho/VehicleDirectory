@@ -3,12 +3,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="flex items-end justify-between">
+                    <div class="grid md:flex items-end justify-between">
                         <div>
                             <h3 class="title text-lg">Employee Directory</h3>
                             <p class="text-sm text-gray-500">Following table displays all the employees in Bhutan National Bank.</p>
                         </div>
-                        <div>
+                        <div class="mt-5 md:mt-auto">
                             <a href="{{ route('add-contact') }}" class="text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md hover:shadow-md duration-700">
                                 <i class="fa-solid fa-user-plus"></i>
                                 Add to Directory
@@ -16,7 +16,7 @@
                         </div>
                 
                     </div>
-                    <div class="grid mt-3">
+                    <div class="grid mt-3 overflow-x-auto">
                         
 
                         <table class="table table-bordered rounded-md overflow-hidden" id="employeesTable" width="100%" cellspacing="0">
@@ -28,7 +28,8 @@
                                     <th>Department</th>
                                     <th>Job Title</th>
                                     <th>Extension</th>
-                                  <th>Action</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tfoot class="bg-blue-500 text-white">
@@ -39,6 +40,7 @@
                                     <th>Department</th>
                                     <th>Job Title</th>
                                     <th>Extension</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                           </tfoot>
@@ -64,6 +66,11 @@
                                         <td>{{ $employee->department->name }}</td>
                                         <td>{{ $employee->title }}</td>
                                         <td>{{ $employee->contact->extension }}</td>
+                                        <td>
+                                            <span class="{{ $employee->status=='active'? 'bg-green-500' : 'bg-red-500' }} text-white px-2">
+                                                {{$employee->status}}
+                                            </span>
+                                        </td>
                                         <td class="text-center">
                                         <div class="flex justify-evenly">
                                             <a href="{{ route('edit-contact', $employee->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Edit {{ $employee->name }}'s Information">

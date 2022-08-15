@@ -301,7 +301,7 @@ box-shadow: 0 4px 15px rgba(86,132,232,.15);
 
 
 @media (min-width: 768px){
-  .container, .container-md, .container-sm {
+  .show-container{
     max-width: 720px;
   }
   

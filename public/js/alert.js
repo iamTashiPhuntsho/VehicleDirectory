@@ -36,3 +36,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
      // Your code to run since DOM is loaded and ready
     });
+
+function copySign() {
+    /* Get the text field */
+    var copyText = document.getElementById('signCode');
+    
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+        /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+    
+    /* Alert the copied text */
+    alert("Signature Code has been copied to clipboard. Please paste it in your email signature configuration.");
+    } 

@@ -17,19 +17,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Directory Administrator',
-            'email' => 'taphin@bnb.bt',
-            'password' => Hash::make('D1rect0ry@2oi9'),
-        ]);
-        DB::table('users')->insert([
-            'name' => 'Directory Administrator2',
-            'email' => 'damber@bnb.bt',
-            'password' => Hash::make('D1rect0ry@2oi9'),
-        ]);
-        DB::table('users')->insert([
-            'name' => 'Lhaki Delma',
-            'email' => 'lhaki@bnb.bt',
-            'password' => Hash::make('Lhaki@2020'),
+            'name' => 'Sherab Wangchuk',
+            'email' => 'sherabwangchuk@bnb.bt',
+            'password' => bcrypt('qwer1234'),
         ]);
         DB::table('users')->insert([
             'name' => 'cyangden',
