@@ -1,15 +1,19 @@
 <x-frontend-layout>
    <x-sidebar />
    <div class="p-5">
-      <h2 class="no-case mb-5 ">Key Employees Search Result</h2>
+      <h2 class="mb-4">Employees Search Result</h2>
       <div class="mb-3">
-         <p class="u-large-text u-text u-text-variant u-text-2"> 
+         <p class="mb-3 u-large-text u-text u-text-variant u-text-2"> 
             BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
          </p>
+				  <h4 class="no-case">Found {{ $records->count() }} Result(s) Matching the Search</h4>
+				  <h4 class="no-case">
+                <small>Ordering of search result is based on alphabetical order of Employees' name</small>
+              </h4>
       </div>
       <div class="row">
          @if($records->count() == 0)
-         <h2 class="no-case mb-5">No Record were found matching the query.</h2>
+         <h3 class="no-case mb-5">No Record were found matching the query.</h3>
          @else
          @if($stat == 'contact')
          @foreach($records as $r)

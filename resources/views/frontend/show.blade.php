@@ -1,6 +1,7 @@
 <x-frontend-layout>
     <x-sidebar/>
 	<div class="p-5">
+
     <div class="cards-5 section-gray">
             <div class="container show-container">
                 <div class="row">

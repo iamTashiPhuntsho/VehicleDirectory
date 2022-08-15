@@ -73,7 +73,6 @@ top: 0;left: 0;
 display: flex;
 align-items: center;
 justify-content: space-between;padding: 0 1rem;
-
 z-index: var(--z-fixed);
 transition: .5s;
 position: fixed;
@@ -84,7 +83,7 @@ box-shadow: 0 0 16px rgba(190,207,246,.3);
 padding: 0 40px 0 24px;
 top: 0;
 z-index: 5;
-background-color: #fff;
+background-color: #f6f9fd;
 transition: all .2s linear;
 }
 
@@ -92,6 +91,7 @@ transition: all .2s linear;
 color: var(--first-color);
 font-size: 1.5rem;
 cursor: pointer;
+
 }
 
 .header_img {
