@@ -38,20 +38,15 @@
          linkColor.forEach(l=> l.addEventListener('click', colorLink))
          
           // Your code to run since DOM is loaded and ready
-         });
-      
-       
+         });     
    </script> 
    <header class="header" id="header">
       <div class="header_toggle"><i class="fas fa-bars" id="header-toggle"></i> </div>
-      <span class="header_title">BNBL Employee Directory</span>
    </header>
    <div class="l-navbar" id="nav-bar">
       <nav class="nav">
          <div>
-            
-           
-      </a>
+
             <div class="nav_list"> 
             <a href="#"> 
             

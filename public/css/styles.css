@@ -21,7 +21,7 @@ body{
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 :root{
---header-height: 3rem;
+--header-height: 1.5rem;
 --nav-width: 68px;
 --first-color: #1C4E80;
 --first-color-light: #FFC300;
@@ -66,7 +66,7 @@ text-decoration: none;
 
 .header
 {
-width: 100%;
+width: 2rem;
 height: var(--header-height);
 position: fixed;
 top: 0;left: 0;
@@ -80,11 +80,10 @@ position: fixed;
 display: flex;
 justify-content: space-between;
 align-items: center;
-box-shadow: 0 0 16px rgba(190,207,246,.3);
 padding: 0 40px 0 24px;
 top: 0;
 z-index: 5;
-background-color: #fff;
+background-color: #f6f9fd;
 transition: all .2s linear;
 }
 
