@@ -46,7 +46,6 @@
    <div class="l-navbar" id="nav-bar">
       <nav class="nav">
          <div>
-
             <div class="nav_list"> 
             <a href="#"> 
             

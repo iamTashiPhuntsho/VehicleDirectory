@@ -6,13 +6,13 @@
             <div class="container-fluid p-0">
                <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
                   <div class="my-auto">
-                     <h2 class="no-case mb-5 ">Search Full List Of Employee</h2>
+                     <h2 class="no-case mb-4 ">Search Full List Of Employee</h2>
                      <div class="mb-3">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
                         </p>
                      </div>
-                     <div class="box wrapper mb-5 container">
+                     <div class="box wrapper mb-4 container">
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-users fa-2x"></i>
                            <p id='0101' class="fs-2 count-title count-number"></p>
@@ -78,7 +78,7 @@
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
                         <div class="row mb-3">
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                         <input type="text" name="employeename" class="form-control form-sz-lg" placeholder="Employee Name">
                         </div>
                         <div class="col-sm-2">
@@ -103,8 +103,9 @@
                         @endforeach
                         </select>
                         </div>
-                        <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" ><i class="fas fa-search" style="margin-right: 10px;"></i>search</button>
+                        <div class="col-sm-1">
+                        <button type="submit" class="form-control form-sz-lg btn btn-block " >
+                           <i class="fas fa-search fa-lg" style="margin-right: 10px;"></i></button>
                         </div>
                         </div>
                         </form>

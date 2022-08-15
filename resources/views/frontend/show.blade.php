@@ -2,7 +2,7 @@
     <x-sidebar/>
 	<div class="p-5">
     <div class="cards-5 section-gray">
-            <div class="container">
+            <div class="container show-container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-profile mb-5">
@@ -39,7 +39,6 @@
         </div>
         <div>
 <small  class="mb-5">If your information is invalid, Please click <a href="{{ route('login_info_path') }}">HERE</a> to edit your information or contact System Administrator at 1277 | 1265.</small>
-
 </div>
     </div>
 
