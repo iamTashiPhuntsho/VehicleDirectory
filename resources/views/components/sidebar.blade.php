@@ -44,17 +44,17 @@
    </script> 
    <header class="header" id="header">
       <div class="header_toggle"><i class="fas fa-bars" id="header-toggle"></i> </div>
-      <div class="header_img"> <img src="{{asset ('images/bnb.png')}}" alt=""></div>
+      <span class="header_title">BNBL Employee Directory</span>
    </header>
    <div class="l-navbar" id="nav-bar">
       <nav class="nav">
          <div>
-            <div class="header_img"> <img src="{{asset ('images/bnb.png')}}" alt=""></div>
+            
             <a href="#" class="nav_logo"> 
-            <span class="nav_logo-name">Employee Directory </span> 
+            <span class="nav_logo-name"> </span> 
             </a>
             <div class="nav_list"> 
-               <a href="{{ route('get_search_path') }}" class="nav_link active"><i class='fas fa-home'></i> <span class="nav_name">Dashboard</span> </a> 
+               <a href="{{ route('get_search_path') }}" class="nav_link"><i class='fas fa-home'></i> <span class="nav_name">Dashboard</span> </a> 
                <a href="{{ route('get_vehicle_path') }}" class="nav_link"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
                <a href="{{ route('login_info_path') }}" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name ">Edit Information</span> </a>
                <a href="{{ route('employee_registration_path') }}" class="nav_link"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Information</span> </a> 

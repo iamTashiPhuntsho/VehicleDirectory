@@ -6,7 +6,7 @@
             <div class="container-fluid p-0">
                <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
                   <div class="my-auto">
-                     <h2 class="no-case mb-5 ">BNBL Employee Directory</h2>
+                     <h2 class="no-case mb-5 ">Search Full List Of Employee</h2>
                      <div class="mb-5">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
@@ -15,17 +15,17 @@
                      <div class="box wrapper mb-5 container">
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-users fa-2x"></i>
-                           <p id='0101' class="fs-2 count-title count-number">{{ count($employees) }}</p>
+                           <p id='0101' class="fs-2 count-title count-number"></p>
                            <p class="count-text ">Total Employee</p>
                         </div>
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-icons fa-2x"></i>
-                           <p id='0102' class="fs-2 count-title count-number">{{count($departments)}}</p>
+                           <p id='0102' class="fs-2 count-title count-number"></p>
                            <p class="count-text">Department</p>
                         </div>
                         <div class="counter col_fourth">
                            <i class='fas fa-external-link-alt fa-2x'></i>
-                           <p id='0103' class="fs-2 count-title count-number">{{count($locations)}}</p>
+                           <p id='0103' class="fs-2 count-title count-number"></p>
                            <p class="count-text">Total Branch</p>
                         </div>
                      </div>
@@ -71,7 +71,7 @@
                            }
                         </script>
                      </body>
-                     <h4 class="no-case mb-5 ">Search Full List Of Employee</h4>
+                     
                      <div class="mb-5">
                         <form class="d-block" action="" method="POST">
                            <div class="row mb-3 form-row">
@@ -83,6 +83,9 @@
                         </div>
                         <div class="col-sm-2">
                         <input type="text" name="flexcube" class="form-control form-sz-lg" placeholder="Flexcube ID">
+                        </div>
+                        <div class="col-sm-2">
+                        <input type="text" name="vehicle_number" class="form-control form-sz-lg" placeholder="Vehicle Number">
                         </div>
                         <div class="col-sm-3">
                         <select name="department" class="form-control form-sz-lg">
@@ -101,7 +104,7 @@
                         </select>
                         </div>
                         <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search"></i>search</button>
+                        <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" ><i class="fas fa-search" style="margin-right: 10px;"></i>search</button>
                         </div>
                         </div>
                         </form>
@@ -124,4 +127,10 @@
          </div>
       </div>
    </div>
+
+   <button class="btn">
+	
+   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+   <span class="buy">Get now</span>
+ </button>
 </x-frontend-layout>
