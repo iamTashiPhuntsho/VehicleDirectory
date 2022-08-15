@@ -78,7 +78,7 @@ class InfoController extends Controller
             if($stat)
             {
                 $email = Contact::where('employee_id',$id)->value('email');
-                Mail::to($email)->send(new OTPSent($otp,$eid));
+                Mail::to($email)->send(new SendOTP($otp,$eid));
                 $msg = "OTP has been sent to your Registered Email ID. Please Check your email for OTP";
                 return redirect()->route('otp_path',Crypt::encryptString($request->employeeid))->with(['status'=>'1','msg'=>$msg]);
             }
