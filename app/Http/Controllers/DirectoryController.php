@@ -14,12 +14,11 @@ class DirectoryController extends Controller
     public function getDirectorySearch(){
         $departments = Department::orderBy('name')->get();
         $locations = Location::orderBy('name')->get();
-    	$no = rand(10,30)%2;
         // $employees = Employee::count();
         $employees = Employee::with('contact')->get();
         //$department = Department::count();
         //$location = Location::count();
-    	return view('frontend.search',compact('no','departments','locations','employees'));
+    	return view('frontend.search',compact('departments','locations','employees'));
     }
     
     public function getResult(){
@@ -38,90 +37,32 @@ class DirectoryController extends Controller
 
     public function searchDirectory(Request $request){
         $records = "";
-        $stat = "employee";
 
-        if($request->department=='0' && $request->location == '0' && $request->employeename == null && $request->flexcube == null)
-        {
-            $records = Employee::orderBy('name')->with('contact')->get();
-        }
-        elseif($request->department=='0' && $request->location == '0' && $request->employeename != null && $request->flexcube == null)
-        {
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->get();   
-        }
-        elseif($request->department=='0' && $request->location != '0' && $request->employeename == null && $request->flexcube == null)
-        {
-            $empids = Contact::where('location_id',$request->location)->pluck('employee_id'); 
-            $records = Employee::orderBy('name')->whereIn('id',$empids)->get();
-        }
-        elseif($request->department!='0' && $request->location == '0' && $request->employeename == null && $request->flexcube == null)
-        {
-            $records = Employee::orderBy('name')->with('contact')->where('department_id',$request->department)->get(); 
-        }
-        elseif($request->department=='0' && $request->location == '0' && $request->employeename == null && $request->flexcube != null)
-        {
-            $empids = Contact::where('flexcube','like',"%$request->flexcube%")->pluck('employee_id'); 
-            $records = Employee::orderBy('name')->whereIn('id',$empids)->get();
-        }
-        elseif($request->department!='0' && $request->location != '0' && $request->employeename == null && $request->flexcube == null)
-        {
-            $firstrecord = Contact::where('location_id',$request->location)->pluck('employee_id');
-            $records = Employee::orderBy('name')->where('department_id',$request->department)->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department=='0' && $request->location != null && $request->employeename != null && $request->flexcube == null)
-        {
-            $firstrecord = Contact::where('location_id',$request->location)->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department!='0' && $request->location == '0' && $request->employeename != null && $request->flexcube == null)
-        {
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->where('department_id',$request->department)->get();      
-        }
-        elseif($request->department=='0' && $request->location != '0' && $request->employeename == null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('location_id',$request->location)->where('flexcube','like',"%$request->flexcube%")->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department!='0' && $request->location == '0' && $request->employeename == null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('flexcube','like',"%$request->flexcube%")->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('department_id',$request->department)->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department!='0' && $request->location != '0' && $request->employeename == null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('flexcube','like',"%$request->flexcube%")->where('location_id',$request->location)->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('department_id',$request->department)->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department!='0' && $request->location != '0' && $request->employeename != null && $request->flexcube == null)
-        {
-            $firstrecord = Contact::where('location_id',$request->location)->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('department_id',$request->department)->where('name','like',"%$request->employeename%")->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department=='0' && $request->location == '0' && $request->employeename != null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('flexcube','like',"%$request->flexcube%")->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department=='0' && $request->location != '0' && $request->employeename != null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('flexcube','like',"%$request->flexcube%")->where('location_id',$request->location)->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->whereIn('id',$firstrecord)->get();
-        }
-        elseif($request->department!='0' && $request->location == '0' && $request->employeename != null && $request->flexcube != null)
-        {
-            $firstrecord = Contact::where('flexcube','like',"%$request->flexcube%")->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->where('department_id',$request->department)->whereIn('id',$firstrecord)->get();
-        }
-        else
-        {
-            $firstrecord = Contact::where('location_id',$request->location)->where('flexcube','like',"%$request->flexcube%")->pluck('employee_id');
-            $records = Employee::orderBy('name')->with('contact')->where('name','like',"%$request->employeename%")->where('department_id',$request->department)->whereIn('id',$firstrecord)->get();
-        }
+        $name = $request->employeename;
+        $flexcube = $request->flexcube;
+        $department = $request->department;
+        $location = $request->location;
+        $vehicle_no = $request->vehicle_no;
+
+        $l_records = Contact::when($location, function ($query, $location) { 
+            $query->where('location_id', $location);
+        })
+        ->pluck('employee_id');
+        $records = Employee::when($name, function ($query, $name) {
+            $query->where('name','like', "%$name%");
+        })
+        ->when($department, function ($query, $department) {
+            $query->where('department_id', "$department");
+        })
+        ->when($vehicle_no, function ($query, $vehicle_no) {
+            $query->where('vehicle_no', 'like',"%$vehicle_no%");
+        })
+        ->whereIn('id', $l_records)->get();
         
-        $no = rand(10,30)%2;
         $param_name = $request->employeename;
         $param_location = $request->location;
         $param_department = $request->department;
-        return view('frontend.result',compact('no','stat','records','param_name','param_department','param_location'));
+        return view('frontend.result',compact('records','param_name','param_department','param_location'));
     }
 }
 

@@ -73,8 +73,7 @@
                      </body>
                      <h4 class="no-case mb-5 ">Search Full List Of Employee</h4>
                      <div class="mb-5">
-                        <form class="d-block" action="" method="POST">
-                           <div class="row mb-3 form-row">
+                        
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
                         <div class="row mb-3">
@@ -99,6 +98,9 @@
                         <option value="{{ $l->id }}">{{ $l->name }}</option>
                         @endforeach
                         </select>
+                        </div>
+                        <div class="col-sm-2">
+                           <input type="text" placeholder="Vehicle Number" class="form-control form-sz-lg" name="vehicle_no"> 
                         </div>
                         <div class="col-sm-2">
                         <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search"></i>search</button>
