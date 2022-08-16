@@ -50,15 +50,28 @@
             <a href="#"> 
             
             <span class="d-none d-lg-block">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{asset ('images/bnb.png')}}" alt="">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-1" src="{{asset ('images/bnb.png')}}" alt="">
         	</span>
       </a>
-               <a href="{{ route('get_search_path') }}" class="nav_link"><i class='fas fa-home'></i> <span class="nav_name">Dashboard</span> </a> 
+               <a href="{{ route('get_search_path') }}" class="nav_link"><i class='fas fa-home'></i> <span class="nav_name">Home</span> </a> 
                <a href="{{ route('get_vehicle_path') }}" class="nav_link"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
                <a href="{{ route('login_info_path') }}" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name ">Edit Information</span> </a>
                <a href="{{ route('employee_registration_path') }}" class="nav_link"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Information</span> </a> 
                <a href="{{ route('sign_index_path') }}" class="nav_link"><i class="fas fa-signature"></i> <span class="nav_name">Mail Signature </span></a> 
             </div>
+
+
+        	
+
+         <div class="nav_item">
+        	<ul class="navbar-nav">
+          		<li class="nav-item">
+          			<small class="text-white">Built By : <br> BNBL DT DEPARTMENT <br>2022</small>
+          		</li>
+        	</ul>
+      	</div>
+      	
+            
          </div>
       </nav>
    </div>

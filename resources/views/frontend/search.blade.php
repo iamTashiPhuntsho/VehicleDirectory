@@ -6,7 +6,7 @@
             <div class="container-fluid p-0">
                <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
                   <div class="my-auto">
-                     <h2 class="no-case mb-4 ">Search Full List Of Employee</h2>
+                     <h2 class="no-case mb-4">BNBL Employee Directory</h2>
                      <div class="mb-3">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
