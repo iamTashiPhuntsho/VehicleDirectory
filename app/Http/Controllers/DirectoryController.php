@@ -43,7 +43,7 @@ class DirectoryController extends Controller
         $flexcube = $request->flexcube;
         $department = $request->department;
         $location = $request->location;
-        $vehicle_no = $request->vehicle_no;
+        $vehicle_no = $request->vehicle_number;
 
         $l_records = Contact::when($location, function ($query, $location) { 
             $query->where('location_id', $location);
