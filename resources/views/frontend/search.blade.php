@@ -103,7 +103,8 @@
                         </select>
                         </div>
                         <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btnbtn-block blue-button" ><i class="fas fa-search"></i>search</button>
+                        <button type="submit" class="form-control form-sz-lg btn btn-block" >
+                           <i class="fas fa-search fa-lg" style="margin-right: 10px;"></i></button>
                         </div>
                         </div>
                         </form>
