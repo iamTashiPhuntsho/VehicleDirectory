@@ -47,9 +47,8 @@
       <nav class="nav">
          <div>
             <div class="nav_list"> 
-            <a href="#"> 
-            
-            <span class="d-none d-lg-block">
+      <a href="#"> 
+            <span class="d-none d-lg-block" class="nav_name">
             <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{asset ('images/bnb.png')}}" alt="">
         	</span>
       </a>

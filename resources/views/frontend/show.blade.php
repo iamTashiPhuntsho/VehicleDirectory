@@ -25,12 +25,6 @@
             		
             	<p> <i class="fa-solid fa-location-dot fa-lg" style="margin-right: 5px;"></i>Location : <span> {{ $record->contact->location->name }}</span></p>
             		<p><i class="fa-solid fa-map-pin fa-lg"style="margin-right: 5px;"></i>Present Address : <span> {{ $record->present_address }} </span></p>
-					
-				
-            
-			
-        
-                                
                             </div>
                         </div>
                     </div>

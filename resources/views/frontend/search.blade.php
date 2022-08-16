@@ -78,7 +78,7 @@
                         @csrf
                         <div class="row mb-3">
                         <div class="col-sm-2">
-                        <input type="text" name="employeename" class="form-control form-sz-lg" placeholder="Employee Name">
+                        <input type="text" name="employeename" class="form-control form-sz-lg" placeholder="Employee Name" autofocus="autofocus">
                         </div>
                         <div class="col-sm-2">
                         <input type="text" name="flexcube" class="form-control form-sz-lg" placeholder="Flexcube ID">

@@ -7,7 +7,7 @@
     	</div>
 		<br>
 	<form action="{{ route('search') }}" method="GET">
-    <input type="text" name="search" placeholder="Ex. BP-0-A0000" required/>
+    <input type="text" name="search" autofocus="autofocus" placeholder="Ex. BP-0-A0000" required/>
     <button type="submit">Search</button>
     </form>
     	<div class="card-body">
