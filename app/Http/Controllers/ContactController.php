@@ -153,7 +153,7 @@ class ContactController extends Controller
             $location = $cr->location->id;
             $employee_id = $cr->employee_id;
             $image = $cr->image;
-            $vehicle_number = $cr->vehicle_number;
+            $vehicle_number = $cr->vehicle_no;
             $present_address = $cr->present_address;
             
             $employee = new Employee;

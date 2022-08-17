@@ -73,12 +73,13 @@
                      </body>
                      
                      <div class="mb-5">
-                        
+                       
+                           <div class="row mb-3 form-row">
                         <form class="d-block" method="POST" action="{{ route('search_directory_path') }}">
                         @csrf
                         <div class="row mb-3">
                         <div class="col-sm-2">
-                        <input type="text" name="employeename" class="form-control form-sz-lg" placeholder="Employee Name" autofocus="autofocus">
+                        <input type="text" name="employeename" class="form-control form-sz-lg" placeholder="Employee Name">
                         </div>
                         <div class="col-sm-2">
                         <input type="text" name="flexcube" class="form-control form-sz-lg" placeholder="Flexcube ID">
@@ -102,8 +103,8 @@
                         @endforeach
                         </select>
                         </div>
-                        <div class="col-sm-2">
-                        <button type="submit" class="form-control form-sz-lg btn btn-block" >
+                        <div class="col-sm-1">
+                        <button type="submit" class="form-control form-sz-lg btn btn-block " >
                            <i class="fas fa-search fa-lg" style="margin-right: 10px;"></i></button>
                         </div>
                         </div>

@@ -5,7 +5,7 @@
       <div class="container-fluid grey-background">
          <div class="content">
             <div class="container-fluid p-0">
-               <section class="search-section p-3 p-lg-5 d-block d-flex d-column bg-bnb-white">
+               <section class="search-section p-3 p-lg-5 d-block d-column bg-bnb-white">
                   <div class="my-auto">
                      <h2 class="no-case mb-4 ">Vehicle Directory</h2>
                      <div class="mb-3">
@@ -77,4 +77,3 @@
       </div>
    </div>
 </x-frontend-layout>
-
