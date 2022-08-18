@@ -2,21 +2,20 @@
     <x-sidebar />
 
     <div class="container">
-      <section class="py-5">
+      <section class="p-5">
         <div class="d-flex flex-column center">
-          		<h3 class="title2">Mail Signature Generator</h3>
+          		<h3 class="title2 mb-4">Mail Signature Generator</h3>
           		<div class="">
           			@if($flag)
-                  <p class="text-center small">Check the Signature Preview below and modify the information if required. Keep the field(s) as it is, if no modification in required. All the empty fields will not be included in the Signature Code.</p>
+                  <p class="text-center small mb-4">
+                    Check the Signature Preview below and modify the information if required. Keep the field(s) as it is, if no modification in required. All the empty fields will not be included in the Signature Code.</p>
                   <div class="preview-container">
                     <div class="clearfix">
                       <form action="{{ route('get_signature_code_path') }}" method="GET">
                         <div class="border p-5 clearfix">
-                          <div style="font-size: 12pt; font-family: sans-serif; line-height: 1.2; margin-bottom: 12px;">
+                          <div class=""style="font-size: 12pt; font-family: sans-serif; line-height: 1.2; margin-bottom: 12px;">
                               Thank you, &amp; Best regards.
                             </div>
-  
-  
                             <div style= "font-family: 'Century Gothic', sans-serif; color: black; line-height: 1.2;">
                               <span style="font-size: 11pt;">
                                 <strong>
@@ -57,12 +56,12 @@
                                 The contents of this e-mail and any attachment(s) are confidential and intended for the named recipient(s) only. Any form of reproduction, dissemination, copying, disclosure, modification, distribution and/or publication of this message without the prior written consent of the author of this e-mail is strictly prohibited. If you have received this email in error please delete it and notify the sender immediately, so that we can ensure such a mistake does not occur in the future. Before opening any mail and attachments please check them for viruses and defects. Any views or opinions presented in this email are solely those of the author and may not necessarily reflect the opinions of BNBL.
                               </p>
                             </div>
-                            
-                          </div>
-                          <div class="clearfix mt-5">
+                            <div class="clearfix mt-5">
                             <input type="hidden" name=" employee_id" value="{{$emp->id}}">
                             <button class="btn bg-bnb-blue text-white rounded-3 btn-primary px-5" type="submit"><i class="fas fa-signature fa-fw fa-lg"></i> Generate Signature Code</button>
                           </div>
+                          </div>
+                         
                       </form>
                     </div>
                   </div>
