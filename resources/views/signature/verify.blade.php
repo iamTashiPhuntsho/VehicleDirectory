@@ -14,9 +14,9 @@
                      </div>
                  
                   <div class="preview-container">
-                    <div class="clearfix">
+                    <div class="card" style="border-radius:20px;">
                       <form action="{{ route('get_signature_code_path') }}" method="GET">
-                        <div class="border p-5 clearfix" style="border-radius:15px;">
+                        <div class="p-5">
                           <div class=""style="font-size: 12pt; font-family: sans-serif; line-height: 1.2; margin-bottom: 12px; font-weight: normal; padding-top:20px;">
                               Thank you, &amp; Best regards.
                             </div>
