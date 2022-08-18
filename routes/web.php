@@ -46,7 +46,7 @@ Route::get('/BNBLEmployeeDirectory/otp-verification/{eid}', [InfoController::cla
 Route::get('/BNBLEmployeeDirectory/edit/{eid}/info', [InfoController::class, 'getEditForm'])->name('edit_info_path');
 Route::post('/BNBLEmployeeDirectory/otp-verification', [InfoController::class, 'sendOTP'])->name('get_employee_and_send_otp_path');
 Route::post('BNBLEmployeeDirectory/verify_otp', [InfoController::class, 'verifyOTP'])->name('verify_otp_path');
-Route::post('BNBLEmployeeDirectory/update-employee-info', [InfoController::class, 'updateInfo'])->name('update_employee_info_path');
+Route::post('BNBLEmployeeDirectory/update-employee-info/{id}', [InfoController::class, 'updateInfo'])->name('update_employee_info_path');
 /*
 |----------------------------------------------------------------------------------
 |Routes for Employee Registration
