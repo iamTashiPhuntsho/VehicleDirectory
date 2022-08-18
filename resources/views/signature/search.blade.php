@@ -26,6 +26,7 @@
                         <div class="button col-sm-6 d-flex mb-3">
                         <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" >Generate</button>
                         </div>
+                        
                         @if ($errors->any())
                         @foreach ($errors->all() as $error)
                         <small class=""><i class="fas fa-exclamation-circle"></i>  {{ $error }}</small><br>
@@ -43,4 +44,5 @@
       </div>
    </div>
    </div>
+
 </x-frontend-layout>
