@@ -11,7 +11,7 @@
                      <div class="card-avatar mb-4">
                         <a href="#"> <img class="img" src='{{asset ("storage/employee_images/$record->image")}}'> </a>
                      </div>
-                     <form action="{{ route('update_employee_info_path') }}" method="POST">
+                     <form action="{{ route('update_employee_info_path', Crypt::encryptString($record->id)) }}" method="POST">
                      @csrf
                      <div class="table">
                       
@@ -20,7 +20,7 @@
                       </p>
                         </div>
                         <h4 class="h4 category text-muted">
-                          <input type="text"  class="form_control form-sz-sm" name="designation" value="{{$record->title}}"required="required"> 
+                          <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"> 
                            &nbsp; | &nbsp; 
                            <input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required">
                         </h4>
@@ -28,17 +28,14 @@
                         <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
                         <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>
                         <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID and Employee ID, Please contact at 1277 or 1265</p>
-                        <input type="hidden" name="odepartment" value="{{ $record->department_id }}">
                         <br>
-                        <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> Select from option below only if you intend to change the current Department</p>
-                      
                         <p>
-                           <i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>New Department: 
+                           <i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Department: 
                            <span>
-                              <select class="form-control form-sz-sm" name="new_dept">
+                              <select class="form-control form-sz-sm" name="department">
                                  <option selected="selected" value="0" >Select your new Department</option>
                                  @foreach($department as $d)
-                                 <option value="{{ $d->id }}"> {{ $d->name }} </option>
+                                 <option value="{{ $d->id }}" {{ $record->department_id == $d->id ? 'selected' : ''}}> {{ $d->name }} </option>
                                  @endforeach 
                               </select>
                            </span>
@@ -49,12 +46,12 @@
                               <p><i class="fa-solid fa-phone fa-lg" style="margin-right: 5px;"></i>Extension : <span><input type="text" name="extension" value="{{ $record->contact->extension }}" class="form-control form-sz-sm"></span></p>
                               <p><i class="fa-solid fa-cube fa-lg" style="margin-right: 5px;"></i>Flexcube User ID : <span> <input type="text" name="flexcube" value="{{ $record->contact->flexcube }}"class="form-control form-sz-sm"></span></p>
                               <p>
-                                 <i class="fa-solid fa-location-dot fa-lg" style="margin-right: 5px;"></i>New Location : 
+                                 <i class="fa-solid fa-location-dot fa-lg" style="margin-right: 5px;"></i>Location : 
                                  <span>
-                                    <select class="form-control form-sz-sm"name="new_location">
-                                       <option selected="selected" value="0">Select your new office Location</option>
+                                    <select class="form-control form-sz-sm"name="location">
+                                       <option value="">Select your office Location</option>
                                        @foreach($location as $l)
-                                       <option value="{{ $l->id }}"> {{ $l->name }} </option>
+                                       <option value="{{ $l->id }}" {{ $record->contact->location_id == $l->id ? 'selected' : ''}}> {{ $l->name }} </option>
                                        @endforeach 
                                     </select>
                                  </span>

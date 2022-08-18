@@ -129,44 +129,43 @@ class InfoController extends Controller
     }
 
     public function updateInfo(Request $request){
-        // return $request->all();
+        // return $request;
+        // return Crypt::decryptString($request->id);
         if($request->btn == '11')
         {
             $status = '1';
-            $name = $request->name;
+            $name = $request->employeename;
             $designation = $request->designation;
             $title = $request->title;
-            if($request->new_dept == '0' || $request->new_dept == $request->odepartment)
-                $department = $request->odepartment;
-            else
-                $department = $request->new_dept;
-
+            $department = $request->department;
             $extension = $request->extension;
             $flexcube = $request->flexcube;
             $mobile = $request->mobile;
-            if($request->new_location == '0' || $request->new_location == $request->olocation)
-                $location = $request->olocation;
-            else
-                $location = $request->new_location;
-            Employee::where('id',$request->id)->update([
-                'name' => $request->name,
+            $location = $request->location;
+            $vehicle_no = $request->vehicle_number;
+            $present_address = $request->present_address;
+            // return $location;
+            Employee::where('id',Crypt::decryptString($request->id))->update([
+                'name' => $name,
                 'designation' => $designation,
                 'title' => $title,
-                'department_id' => $department
+                'department_id' => $department,
+                'vehicle_no' => $vehicle_no,
+                'present_address' => $present_address,
             ]);
-            Contact::where('employee_id',$request->id)->update([
+            Contact::where('employee_id',Crypt::decryptString($request->id))->update([
                 'mobile' => $mobile,
                 'extension' => $extension,
                 'flexcube' => $flexcube,
                 'location_id' => $location
             ]);
 
-            Signin::where('employee_id',$request->id)->update([
+            Signin::where('employee_id',Crypt::decryptString($request->id))->update([
                 'OTP' => null,
                 'try_count' => null,
                 'OTP_time' => null
             ]);
-            $msg = "Contact Information of $request->name has been updated.";
+            $msg = "Contact Information of $name has been updated.";
             return redirect()->route('get_search_path')->with(['status'=>$status,'msg'=>$msg]);
         }   
         else
