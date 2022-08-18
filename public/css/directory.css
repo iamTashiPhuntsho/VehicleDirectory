@@ -259,6 +259,7 @@ font-weight: normal;
 .card-text small{
 
 font-size: 12px;
+font-weight: normal;
 }
 .card-title small{
 
@@ -414,6 +415,10 @@ color: #4ad1e5;
  font-size: 14px;
 padding-left: 2rem;
 padding-right: 2rem;
+
+}
+small{
+  font-weight: normal;
 }
 
 .table p span {
