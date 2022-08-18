@@ -17,7 +17,8 @@ h2 {
 .search-section {
     padding-top: 0rem !important;
     padding-bottom: 0rem !important;
-    min-height: 100vh;
+    min-height: auto;
+    width: 100%;
   }
   @media (max-width: 48rem) {
     .search-section{
@@ -237,8 +238,8 @@ person-right-content[_ngcontent-app-root-c27] {
 .p-5 {
   padding-top: 0rem !important;
   padding-bottom: 3rem !important;
-  min-height: 100vh;
-  width: 95%;
+  min-height:auto;
+  width: 100%;
   margin: auto;
 }
 @media (max-width: 48rem) {
@@ -317,7 +318,7 @@ box-shadow: 0 4px 15px rgba(86,132,232,.15);
 
 @media (min-width: 768px){
   .show-container{
-    max-width: 720px;
+    max-width: 750px;
   }
   
 }
@@ -386,15 +387,15 @@ img, svg {
 
 h4, .h4 {
   font-size: 1.3em;
-  line-height: 1.55em;
+  font-weight: 00;
+
 
 }
 
 .category {
   position: relative;
   line-height: 0;
-  margin: 15px 0;
-
+  margin: 30px 0;
 }
 .text-muted {
   color: #0061ff !important;
@@ -406,11 +407,16 @@ h4, .h4 {
 }
 .table p {
   color: #3d4141;
+ justify-content: left;
+ text-align: left;
+ font-size: 14px;
+padding-left: 2rem;
+padding-right: 2rem;
 }
 
 .table p span {
   color:  #02080e;
-  line-height: 1rem;
+ 
   font-weight: 600;
 }
 
@@ -437,7 +443,7 @@ h4, .h4 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+ 
 }
 .card-image{
  width: 85%;
@@ -446,7 +452,6 @@ h4, .h4 {
 .card {
   margin: 0 auto; /* Added */
   float: none; /* Added */
-  
 }
 .show-container{
   padding-top: 3rem;
@@ -490,4 +495,54 @@ h4, .h4 {
     .header{
      padding-top: 1rem;
       }
+}
+.table tr{
+  font-size: 14px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+
+ 
+}
+.column h4{
+  text-align: left;
+  padding-left: 2rem;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form_control{
+  border-radius: 2rem;
+padding: .375rem .75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+
+}
+.btn-group{
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+}
+.btn-group button{
+
+  font-size: 1rem;
 }

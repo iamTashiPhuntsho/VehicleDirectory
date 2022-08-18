@@ -1,109 +1,87 @@
+
 <x-frontend-layout>
-    <x-sidebar />
+   <x-sidebar/>
+   <div class="p-5">
+   <h2 class="mb-4">Edit {{ $record->name }}'s Information</h2>
+      <div class="cards-5">
+         <div class="container show-container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="card card-profile">
+                     <div class="card-avatar mb-4">
+                        <a href="#"> <img class="img" src='{{asset ("storage/employee_images/$record->image")}}'> </a>
+                     </div>
+                     <form action="{{ route('update_employee_info_path') }}" method="POST">
+                     @csrf
+                     <div class="table">
+                      
+                        <div col-sm-12>
+                            <p><input type="text" name="employeename" value="{{ $record->name }}" class="form-control form-sz-sm" placeholder="Edit your employee Name">
+                      </p>
+                        </div>
+                        <h4 class="h4 category text-muted">
+                          <input type="text"  class="form_control form-sz-sm" name="designation" value="{{$record->title}}"required="required"> 
+                           &nbsp; | &nbsp; 
+                           <input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required">
+                        </h4>
+                 
+                        <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
+                        <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>
+                        <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID and Employee ID, Please contact at 1277 or 1265</p>
+                        <input type="hidden" name="odepartment" value="{{ $record->department_id }}">
+                        <br>
+                        <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> Select from option below only if you intend to change the current Department</p>
+                      
+                        <p>
+                           <i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>New Department: 
+                           <span>
+                              <select class="form-control form-sz-sm" name="new_dept">
+                                 <option selected="selected" value="0" >Select your new Department</option>
+                                 @foreach($department as $d)
+                                 <option value="{{ $d->id }}"> {{ $d->name }} </option>
+                                 @endforeach 
+                              </select>
+                           </span>
+                        </p>
+                        <div class="row">
+                           <div class="column mb-3 ">
+                              <h4>Office Information</h4>
+                              <p><i class="fa-solid fa-phone fa-lg" style="margin-right: 5px;"></i>Extension : <span><input type="text" name="extension" value="{{ $record->contact->extension }}" class="form-control form-sz-sm"></span></p>
+                              <p><i class="fa-solid fa-cube fa-lg" style="margin-right: 5px;"></i>Flexcube User ID : <span> <input type="text" name="flexcube" value="{{ $record->contact->flexcube }}"class="form-control form-sz-sm"></span></p>
+                              <p>
+                                 <i class="fa-solid fa-location-dot fa-lg" style="margin-right: 5px;"></i>New Location : 
+                                 <span>
+                                    <select class="form-control form-sz-sm"name="new_location">
+                                       <option selected="selected" value="0">Select your new office Location</option>
+                                       @foreach($location as $l)
+                                       <option value="{{ $l->id }}"> {{ $l->name }} </option>
+                                       @endforeach 
+                                    </select>
+                                 </span>
+                              </p>
+                           </div>
+                           <div class="column mb-3">
+                              <h4>Personal Information</h4>
+                              <p><i class='fa fa-mobile-phone fa-lg' style="margin-right: 5px;" ></i>Mobile Number : <span><input type="text" name="mobile" value="{{ $record->contact->mobile }}" class="form-control form-sz-sm"></span></p>
+                              <p><i class="fa-solid fa-car-side fa-lg" style="margin-right: 5px;"></i>Vehicle Number : <span> <input type="text" name="vehicle_number" value="{{ $record->vehicle_no }}"class="form-control form-sz-sm"></span></p>
+                              <p><i class="fa-solid fa-map-pin fa-lg"style="margin-right: 5px;"></i>Present Address : <span> <input type="text" name="present_address" value="{{ $record->present_address }}" class="form-control form-sz-sm" > </span></p>
+                           </div>
 
-    <div class="container-fluid p-0">
-
-        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-          <form action="{{ route('update_employee_info_path') }}" method="POST">
-            @csrf
-          <div class="my-auto">
-            <h2>Edit {{ $record->name }}'s Information</h2>
-              <h2 class="mb-0"> 
-                <input type="text" name="name" value="{{ $record->name }}" class="lg-input" required="required">
-                <input type="hidden" name="id" value="{{ $record->id }}">
-              </h2>
-              <br>
-              <div class="subheading mb-4">
-                <span title="Designation" data-toggle="tooltip" class="text-bnb-blue"data-placement="bottom"><input type="text" name="designation" value="{{$record->designation}}" class="lg-input" required="required"></span>
-                 &nbsp; | &nbsp; 
-                <span class="text-bnb-orange"data-placement="bottom" data-toggle="tooltip" title="Job Title"><input type="text" name="title" value="{{$record->title}}" class="lg-input" required="required"></span>
-              </div>
-              <hr>
-              <div class="social-icons">
-                <a href="#" class="mb-3">
-                    <i class="fas fa-id-badge"></i> 
-                </a>
-                <h3>Employee ID : {{ $record->employee_id }}</h3>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-sitemap"></i> 
-                </a>
-                <h3>Currently Selected Department : {{$record->department->name}}</h3>
-                <input type="hidden" name="odepartment" value="{{ $record->department_id }}">
-                <br>
-                <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> Select from option below only if you intend to change the current Department</p>
-                <br>
-                <h3>
-                  <a href="#" class="mb-3">
-                    <i class="fas fa-sitemap"></i> 
-                  </a>
-                  New Department : <select class="lg-input" name="new_dept">
-                    <option selected="selected" value="0">Select your new Department</option>
-                    @foreach($department as $d)
-                      <option value="{{ $d->id }}"> {{ $d->name }} </option>
-                    @endforeach 
-                  </select>
-                </h3>
-                <hr>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-phone"></i> 
-                </a>
-                <h3>Extension : <input type="text" name="extension" value="{{ $record->contact->extension }}" class="lg-input" ></h3>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-mobile"></i>
-                </a>
-                <h3>Mobile Number : <input type="text" name="mobile" value="{{ $record->contact->mobile }}" class="lg-input"></h3>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-envelope-open"></i>
-                </a>
-                <h3>Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></h3>
-                <input type="hidden" name="email" value="{{ $record->contact->email }}">
-                <br>
-                <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID, Please contact at 1277 or 1265</p>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-user-shield"></i>
-                </a>
-                <h3>Flexcube User ID : <span class="text-bnb-blue no-case"> <input type="text" name="flexcube" value="{{ $record->contact->flexcube }}" class="lg-input" ></span></h3>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-user-shield"></i>
-                </a>
-                <h3>Vehicle Number : <span class="text-bnb-blue no-case"> <input type="text" name="vehicle_number" value="{{ $record->vehicle_no }}" class="lg-input" ></span></h3>
-                <hr>
-                <a href="#">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <h3>Current Office Location : {{ $record->contact->location->name }}</h3>
-                <input type="hidden" name="olocation" value="{{ $record->contact->location_id }}">
-                <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> To change the office location, Please select your new office location from the dropdown list</p>
-                <a href="#">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <h3>New Location : <select class="lg-input" name="new_location">
-                    <option selected="selected" value="0">Select your new office Location</option>
-                    @foreach($location as $l)
-                      <option value="{{ $l->id }}"> {{ $l->name }} </option>
-                    @endforeach 
-                  </select>
-                </h3>
-                <br>
-                <a href="#" class="mb-3">
-                    <i class="fas fa-user-shield"></i>
-                </a>
-                <h3>Present Address : <span class="text-bnb-blue no-case"> <input type="text" name="present_address" value="{{ $record->present_address }}" class="lg-input" ></span></h3>
-                <hr>
-                <hr>
-                <div class="btn-group">
-                  <button type=" submit" value="11" name="btn" class="btn btn-lg bg-bnb-blue text-white"><i class="fas fa-save"></i> Save Information and Exit</button>
-                  <button type=" submit" value="00" name="btn" class="btn btn-lg bg-bnb-orange text-white"><i class="fas fa-sign-out-alt"></i> Exit Without Saving</button>
-                </div>
-              </div>
-              
-          </div>
-        </form>
-        </section>
-    </div>
-    </x-frontend-layout>
+                           <div class="btn-group">
+                            <button type=" submit" value="11" name="btn" class="btn btn-lg bg-bnb-blue text-white"><i class="fas fa-save"></i> Save Information and Exit</button>
+                            <button type=" submit" value="00" name="btn" class="btn btn-lg bg-bnb-orange text-white"><i class="fas fa-sign-out-alt"></i> Exit Without Saving</button>
+                          </div>
+                        </div>
+                     </div>
+                     </form>
+                  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div>
+         <small  class="mb-5">If your information is invalid, Please click <a href="">HERE</a> to edit your information or contact System Administrator at 1277 | 1265.</small>
+      </div>
+   </div>
+</x-frontend-layout>
