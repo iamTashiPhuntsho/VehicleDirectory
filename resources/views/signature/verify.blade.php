@@ -42,7 +42,7 @@
                                 <span style="font-size: 11pt; font-family: 'Raleway ExtraBold', sans-serif; color: black; line-height: 1.6; font-weight: normal;">
                                   <strong>BHUTAN NATIONAL BANK LTD.</strong>
                                 </span><br>
-                                <span style="font-size: 10pt; font-family: 'Century Gothic', sans-serif; color: black; line-height: 1;">
+                                <span style="font-weight:normal;font-size: 10pt; font-family: 'Century Gothic', sans-serif; color: black; line-height: 1;">
                                   <strong>T :</strong>&nbsp;<input type="text" name="telephone" placeholder="Landline Number"> | <strong>IP :</strong>&nbsp;{{$emp->contact->extension}}<br />
                                   <strong>M :</strong>+975 {{$emp->contact->mobile}}<br />
                                   <input type="text" name="office" value="{{$office}}" placeholder="Corporate Office, Branch or Extension Name"><br /> 
