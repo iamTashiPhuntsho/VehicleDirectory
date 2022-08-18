@@ -254,7 +254,6 @@ color: #404040;
 .card-text{
 color:#3d4141;
 font-size: 12px;
-font-weight: normal;
 }
 .card-text small{
 
@@ -464,7 +463,6 @@ width: 85%;
 padding-top: 3rem;
 }
 
-
 .img-fluid {
 display: block;
 margin-left: auto;
@@ -472,9 +470,8 @@ margin-right: auto;
 width: 50%;
 text-decoration: none;
 text-align: center;
-padding-top: 1rem;
+padding-top: .5rem;
 padding-bottom: 0.5rem;
-
 
 }
 
@@ -487,13 +484,13 @@ text-decoration: none;
 text-align: center;
 color:#FEB139;
 }
-.nav_item{
-left: 0;
-padding: 3rem .5rem 0 0;
+.nav_item {
+  left: 0;
+  padding: 3rem .5rem 0 0;
 }
 .nav_item2{
-left: 0;
-padding: .5rem 1rem 1rem 0;
+  left: 0;
+  padding: .5rem 1rem 1rem 0;
 }
 .nav_item2 ul li small{
   display: block;
@@ -503,8 +500,6 @@ padding: .5rem 1rem 1rem 0;
   text-decoration: none;
   text-align: center;
   color:#FEB139;
-  
-  
   }
 
 @media (max-width: 48rem) {
