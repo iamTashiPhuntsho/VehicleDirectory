@@ -63,7 +63,7 @@ class InfoController extends Controller
         $eid = $request->employeeid;
     	if(count($id)<1)
     	{
-    		$msg = "Check you employee ID. Employee ID is invalid";
+    		$msg = "Check your employee ID. Employee ID is invalid";
     		return back()->with(['status'=>'0','msg'=>$msg]);
     	}
     	else{

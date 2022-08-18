@@ -14,7 +14,7 @@
                   @csrf
           				<div class="form-row mb-3">
           					<div class="col-md-8">
-          						<input type="text" name="employee_id" class="form-control form-sz-lg" placeholder="Enter your Employee ID" maxlength="10">
+          						<input type="text" name="employeeid" class="form-control form-sz-lg" autofocus="autofocus" placeholder="Enter your Employee ID" maxlength="10">
           					</div>
           					<div class="col-md-4 ">
           						<button type="submit" class="btn  btn-block form-sz-lg text-white bg-bnb-blue">

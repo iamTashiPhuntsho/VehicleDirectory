@@ -152,7 +152,7 @@ font-weight: 700;
 .nav_link{
 position: relative;
 color: var(--white-color);
-margin-bottom: 1rem;
+margin-bottom: 0.5rem;
 transition: .3s;
 }
 .nav_link:hover{
@@ -205,7 +205,7 @@ padding: 0 2rem 0 calc(var(--nav-width) + 1rem);
 
 }
 .show{
-  width: calc(var(--nav-width) + 160px);
+  width: calc(var(--nav-width) + 170px);
 }
 
 .body-pd{
@@ -230,8 +230,3 @@ body, .title2{
     font-size: 14px;
 
 }
-
-
-
-
-

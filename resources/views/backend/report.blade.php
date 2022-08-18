@@ -57,8 +57,8 @@
                                 <label for="office">Office Location</label>
                             </div>
                             <div class="border p-2">
-                                <input type="checkbox" name="column[]" id="vehicle_no" value="vehicle_no">
-                                <label for="vehicle_no">Vehicle Number</label>
+                                <input type="checkbox" name="column[]" id="vehicle_number" value="vehicle_number">
+                                <label for="vehicle_number">Vehicle Number</label>
                             </div>
                             <div class="border p-2">
                                 <input type="checkbox" name="column[]" id="present_address" value="present_address">
