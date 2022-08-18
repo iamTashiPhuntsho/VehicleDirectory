@@ -51,6 +51,7 @@ width: 100%;
   border-radius: 2rem;
   text-align: center; 
   font-size: 0.9rem;
+  appearance: auto;
 }
 .blue-button {
 padding: 8px 10px;
@@ -68,6 +69,7 @@ font-size: 0.9rem;
 width: 691px;
 margin: 12px auto 0;
 text-align: center;
+font-weight: normal;
 }
 @media (max-width: 48rem) {
 .u-text-2{
@@ -507,6 +509,7 @@ color:#FEB139;
 }
 .table tr{
   font-size: 14px;
+  font-weight: normal;
 }
 
 .column {
