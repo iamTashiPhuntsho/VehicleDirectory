@@ -19,7 +19,7 @@
                            <p class="count-text ">Total Employee</p>
                         </div>
                         <div class="counter col_fourth">
-                           <i class="fa-solid fa-icons fa-2x"></i>
+                        <i class="fa-solid fa-sitemap fa-2x"></i>
                            <p id='0102' class="fs-2 count-title count-number"></p>
                            <p class="count-text">Department</p>
                         </div>
