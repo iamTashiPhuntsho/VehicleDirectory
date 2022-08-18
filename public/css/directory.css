@@ -51,7 +51,7 @@ width: 100%;
   border-radius: 2rem;
   text-align: center; 
   font-size: 0.9rem;
-  appearance: auto;
+  appearance: normal;
 }
 .blue-button {
 padding: 8px 10px;
@@ -476,26 +476,24 @@ padding-bottom: 0.5rem;
 display: block;
 margin-left: auto;
 margin-right: auto;
-width: 70%;
+width: 75%;
 text-decoration: none;
 text-align: center;
 color:#FEB139;
-
-
 }
 .nav_item{
-padding-top: 3rem;
-
+left: 0;
+padding: 3rem .5rem 0 0;
 }
 .nav_item2{
-  padding-top: 0rem;
-  padding-bottom: 1rem;
+left: 0;
+padding: .5rem 1rem 1rem 0;
 }
 .nav_item2 ul li small{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 75%;
   text-decoration: none;
   text-align: center;
   color:#FEB139;
