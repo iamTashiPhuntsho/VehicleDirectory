@@ -51,6 +51,7 @@ width: 100%;
   border-radius: 2rem;
   text-align: center; 
   font-size: 0.9rem;
+  appearance: auto;
 }
 .blue-button {
 padding: 8px 10px;
@@ -68,6 +69,7 @@ font-size: 0.9rem;
 width: 691px;
 margin: 12px auto 0;
 text-align: center;
+font-weight: normal;
 }
 @media (max-width: 48rem) {
 .u-text-2{
@@ -474,7 +476,7 @@ padding-bottom: 0.5rem;
 display: block;
 margin-left: auto;
 margin-right: auto;
-width: 72%;
+width: 70%;
 text-decoration: none;
 text-align: center;
 color:#FEB139;
@@ -482,18 +484,18 @@ color:#FEB139;
 
 }
 .nav_item{
-padding-top: 2rem;
+padding-top: 3rem;
 
 }
 .nav_item2{
   padding-top: 0rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 .nav_item2 ul li small{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 72%;
+  width: 70%;
   text-decoration: none;
   text-align: center;
   color:#FEB139;
@@ -504,7 +506,6 @@ padding-top: 2rem;
 @media (max-width: 48rem) {
   .nav{
    padding-top: 6rem;
-  overflow-y: scroll;
     }
 }
 @media (max-width: 48rem) {
@@ -514,6 +515,7 @@ padding-top: 2rem;
 }
 .table tr{
   font-size: 14px;
+  font-weight: normal;
 }
 
 .column {
