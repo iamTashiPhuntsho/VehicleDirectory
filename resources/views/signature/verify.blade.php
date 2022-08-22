@@ -62,7 +62,7 @@
                             </div>
                             <div class="clearfix mt-5">
                             <input type="hidden" name=" employee_id" value="{{$emp->id}}">
-                            <button class="btn bg-bnb-blue text-white rounded-3 btn-primary px-5" type="submit"><i class="fas fa-signature fa-fw fa-lg"></i> Generate Signature Code</button>
+                            <button class="btn bg-bnb-blue text-white rounded-3 btn-primary px-5 py-2" type="submit"><i class="fas fa-signature fa-fw fa-lg"></i> Generate Signature Code</button>
                           </div>
                           </div>
                          

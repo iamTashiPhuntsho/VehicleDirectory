@@ -26,7 +26,7 @@ require __DIR__.'/backend.php';
 Route::get('/', [DirectoryController::class, 'getDirectorySearch']);
 Route::get('/BNBLEmployeeDirectory', [DirectoryController::class, 'getDirectorySearch'])->name('get_search_path');
 Route::get('/BNBLEmployeeDirectory/result', [DirectoryController::class, 'getResult'])->name('result_path');
-Route::get('/BNBLEmployeeDirectory/result/{id}/show/{ename}/{location}/{department}', [DirectoryController::class, 'getShow'])->name('show_result_path');
+Route::get('/BNBLEmployeeDirectory/result/{id}/show/{ename}/{location}/{department}/{vehicle_number}', [DirectoryController::class, 'getShow'])->name('show_result_path');
 Route::post('/BNBLEmployeeDirectory', [DirectoryController::class, 'searchDirectory'])->name('search_directory_path');
 
 //Routes for vehicle directory

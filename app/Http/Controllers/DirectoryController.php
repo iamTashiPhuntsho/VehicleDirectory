@@ -32,8 +32,9 @@ class DirectoryController extends Controller
         $param_name = Crypt::decryptString($request->ename);
         $param_department = Crypt::decryptString($request->department);
         $param_location =Crypt::decryptString($request->location);
+        $param_vehicle_number =Crypt::decryptString($request->vehicle_number);
         $employee = Employee::with('contact')->find($request->id);
-    	return view('frontend.show',compact('no','record','param_location','param_name','param_department','employee'));
+    	return view('frontend.show',compact('no','record','param_location','param_name','param_department','param_vehicle_number','employee'));
     }
 
     public function searchDirectory(Request $request){
@@ -63,6 +64,8 @@ class DirectoryController extends Controller
         $param_name = $request->employeename;
         $param_location = $request->location;
         $param_department = $request->department;
-        return view('frontend.result',compact('records','param_name','param_department','param_location'));
+        $param_vehicle_number = $request->vehicle_number;
+
+        return view('frontend.result',compact('records','param_name','param_department','param_location','param_vehicle_number'));
     }
 }

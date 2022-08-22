@@ -17,3 +17,18 @@ function showMyImage(fileInput) {
         reader.readAsDataURL(file);
     }    
 }
+
+function copySign() {
+    /* Get the text field */
+    var copyText = document.getElementById("signCode");
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+  
+    /* Alert the copied text */
+    alert("Signature code has been copied, Please paste it in your zimbra configuration.");
+} 

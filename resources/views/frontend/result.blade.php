@@ -1,53 +1,51 @@
 <x-frontend-layout>
    <x-sidebar />
    <div class="p-5">
-      <h2 class="mb-4">Employees Search Result</h2>
       <div class="mb-3">
-         <p class="mb-3 u-large-text u-text u-text-variant u-text-2"> 
-            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
-         </p>
-				  <h4 class="no-case">Found {{ $records->count() }} Result(s) Matching the Search</h4>
-				  <h4 class="no-case">
+				  <h2 class="title2">Found {{ $records->count() }} result(s) matching the search</h2>
+				  <h5 class="title2 text-center">
                 <small>Ordering of search result is based on alphabetical order of Employees' name</small>
-              </h4>
+              </h5>
       </div>
       <div class="row">
          @if($records->count() == 0)
-         <h3 class="no-case mb-5">No Record were found matching the query.</h3>
+            <div class="title2 text-center mt-5">
+               <h4>No record were found matching the query.</h4>
+               <small>Please try with different search key words.</small>
+               <br>
+               <a href="{{ route('get_search_path') }}" class="btn btn-primary px-3 py-1 mt-3">
+                  Back to Search Parameters
+               </a>
+            </div>
          @else
          
-         @foreach($records as $r)
-         <div class="col-lg-4 ">
-            <a href="{{ route('show_result_path',[Crypt::encryptString($r->id),Crypt::encryptString($param_name),Crypt::encryptString($param_location),Crypt::encryptString($param_department)]) }}" class="message px-5 py-3 no-anchor-style ">
-               <div class="card card-employee">
-                  <div class="card-body">
-                     <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-6 col-xl-9 order-2 order-lg-2">
-                           <h5 class="card-title"> 
-                              {{$r->name}}
-                              <br>
-                              <small>{{ $r->title }}</small>
-                           </h5>
-                           <div class="card-text ">
-                              <div><small>Employee ID</small> : {{ $r->employee_id}}</div>
-                              <div>
-                              <div class=" bg-gray-100 roundy px-0 py-1 mr-0 mr-lg-1 mt-1 mt-lg-0" style="width: 30%; float:left"><i class="fa-solid fa-phone fa-md" style="margin-right: 5px;"></i>{{ $r->contact->extension }}</div>
-                              <div class="bg-gray-100 roundy px-0 py-1 mr-0 mr-lg-1 mt-1 mt-lg-0" style="width: 70%; float:right;"><i class='fa fa-mobile-phone fa-lg' style="margin-right: 5px;" ></i> {{ $r->contact->mobile }}</div>
-                              </div>
-                              <div class="bg-gray-100 roundy px-0 py-1 mr-0 mr-lg-1 mt-1 mt-lg-0"><i class="fa fa-envelope-o " style="margin-right: 5px;"></i> {{ $r->contact->email }}</div>
-                           </div>
-                           <small class="mb-0 t-3 mt-lg-0" style="color:#0061ff; font-size:12px;">click to view detail <i class="fas fa-arrow-right"></i></small>
-
-                        </div>
-                        <div class="col-md-10 col-lg-6 col-xl-3 align-items-center order-1 order-lg-1 result-img">
-                           <img src='{{ asset("storage/employee_images/$r->image") }}' style="max-width: 5rem" class="card-img-top rounded-circle " alt="...">
-                        </div>
+            @foreach($records->sortby('name') as $r)
+            <div class="col-lg-4 ">
+               <div class="bg-white shadow-sm p-4 position-relative rounded overflow-hidden">
+                        
+                     <img src='{{ asset("storage/employee_images/$r->image") }}' style="object-fit: cover; object-position: center;" class="h-75 w-25 rounded-start shadow position-absolute top-0 end-0" alt="...">
+                     
+                     <div class="">
+                        <h5 class="title bnb-blue">{{ $r->name }}</h5>
+                        <small class="bnb-blue" style="font-size: 12px; font-weight:bold;">{{ $r->title }}</small><br>
+                        <small><i class="fa-solid fa-id-badge fa-fw me-2"></i>{{ $r->employee_id }}</small><small class="ms-4"><i class="fa-solid fa-phone fa-fw me-2"></i>{{ $r->contact->extension }}</small><br>
+                        @if(!blank($r->flexcube))
+                           <small><i class="fa-solid fa-cube fa-fw me-2"></i>{{ $r->contact->flexcube }}</small><br>
+                        @endif
+                        @if(!blank($r->contact->mobile))
+                           <small><i class="fa-solid fa-mobile fa-fw me-2"></i>{{ $r->contact->mobile }}</small><br>
+                        @endif
+                        <small><i class="fa-solid fa-envelope fa-fw me-2"></i>{{ $r->contact->email }}</small><br>
+                        @if(!blank($r->vehicle_no))
+                           <small><i class="fa-solid fa-car-rear fa-fw me-2"></i>{{ $r->vehicle_no }}</small>
+                        @endif
                      </div>
-                  </div>
+                     <a href="{{ route('show_result_path',[Crypt::encryptString($r->id),Crypt::encryptString($param_name),Crypt::encryptString($param_location),Crypt::encryptString($param_department),Crypt::encryptString($param_vehicle_number)]) }}" class="bg-bnb-blue text-white position-absolute end-0 px-2">
+                        <small>view detail <i class="fas fa-arrow-right"></i></small>
+                     </a>
                </div>
-            </a>
-         </div>
-         @endforeach
+            </div>
+            @endforeach
          @endif
       </div>
    </div>

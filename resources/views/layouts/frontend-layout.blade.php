@@ -29,11 +29,9 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
-                
-    
-                
             </main>
         </div>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
     </body>
 </html>
