@@ -49,7 +49,7 @@
 
          <span class="d-none d-lg-block">
          {{-- <x-app-logo-front-small /> --}}
-         <img class="img-fluid img-profile rounded-circle mx-auto mb-1" src="{{asset ('images/bnb.png')}}" alt="">
+         <img class="img-fluid img-profile mx-auto mb-1" src="{{asset ('images/logo.png')}}" alt="">
          </span>
         <div class="nav_item2">
          <ul class="navbar-nav">
@@ -60,11 +60,11 @@
        </div>
    </a>
    
-            <a href="{{ route('get_search_path') }}" class="nav_link"><i class='fas fa-home'></i> <span class="nav_name">Home</span> </a> 
-            <a href="{{ route('get_vehicle_path') }}" class="nav_link"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
-            <a href="{{ route('login_info_path') }}" class="nav_link"> <i class="fas fa-user-edit"></i> <span class="nav_name ">Edit Information</span> </a>
-            <a href="{{ route('employee_registration_path') }}" class="nav_link"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Information</span> </a> 
-            <a href="{{ route('sign_index_path') }}" class="nav_link"><i class="fas fa-signature"></i> <span class="nav_name">Mail Signature </span></a> 
+            <a href="{{ route('get_search_path') }}" class="nav_link {{request()->routeIs('get_search_path') ? 'active' : ''}}"><i class='fas fa-home'></i> <span class="nav_name">Home</span> </a> 
+            <a href="{{ route('get_vehicle_path') }}" class="nav_link {{request()->routeIs('get_vehicle_path') ? 'active' : ''}}"> <i class="fas fa-car-alt"></i> <span class="nav_name">Vehicle Details</span> </a> 
+            <a href="{{ route('login_info_path') }}" class="nav_link {{request()->routeIs('login_info_path') ? 'active' : ''}}"> <i class="fas fa-user-edit"></i> <span class="nav_name ">Edit Information</span> </a>
+            <a href="{{ route('employee_registration_path') }}" class="nav_link {{request()->routeIs('employee_registration_path') ? 'active' : ''}}"> <i class="fas fa-user-plus"></i> <span class="nav_name">Register Information</span> </a> 
+            <a href="{{ route('sign_index_path') }}" class="nav_link {{request()->routeIs('sign_index_path') ? 'active' : ''}}"><i class="fas fa-signature"></i> <span class="nav_name">Mail Signature </span></a> 
          </div>
 
       <div class="nav_item">
