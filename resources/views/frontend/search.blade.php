@@ -65,9 +65,9 @@
                            let text2 = document.getElementById('0102');
                            let text3 = document.getElementById('0103');
                            const load = () => {
-                           animate(text1, 300, {{count($employees)}}, 8000);
-                           animate(text2, 0, {{count($departments)}}, 4000);
-                           animate(text3, 100, {{count($locations)}}, 7000);
+                           animate(text1, 1000, {{count($employees)}}, 3000);
+                           animate(text2, 100, {{count($departments)}},3000);
+                           animate(text3, 100, {{count($locations)}}, 3000);
                            }
                         </script>
                      </body>
