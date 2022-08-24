@@ -24,7 +24,8 @@
                            </div>
                         </div>
                         <div class="button col-sm-6 d-flex mb-3">
-                        <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" >Generate</button>
+                        <button type="submit" class="form-control form-sz-lg btn-primary btn px-3 py-2 btn-block text-white blue-button" >Generate</button>
+
                         </div>
                         
                         @if ($errors->any())

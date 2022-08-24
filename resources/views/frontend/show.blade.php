@@ -10,7 +10,7 @@
                <div class="col-lg-8 p-4 text-start title2">
                   <h2 class="title">  {{ $record->name }}</h2>
                   <h5 class="title2 text-center">{{$record->title}} | {{$record->designation}}</h5>
-                  <h5 class="title2 text-center">{{$record->department->name}}</h5>
+                  <h5 class="title2 text-center bnb-blue">{{$record->department->name}}</h5>
                   <div class="row">
                      <span class="bnb-blue fs-6">Office and Contact Information</span>
                      <div class="col-lg-6">
@@ -37,7 +37,7 @@
             <input type="hidden" name="department" value="{{ $param_department }}">
             <input type="hidden" name="location" value="{{ $param_location }}">
             <input type="hidden" name="vehicle_number" value="{{ $param_vehicle_number }}">
-            <button type="submit" class="btn bg-bnb-blue text-white px-3 py-2"><i class="fas fa-chevron-left fa-fw"></i> Back to search result</button>
+            <button type="submit" class="btn btn-primary text-white px-3 py-2" style="margin-left:1.5rem;"><i class="fas fa-chevron-left fa-fw"></i> Back to search result</button>
           </form>
       </div>
       <div>

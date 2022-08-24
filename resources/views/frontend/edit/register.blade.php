@@ -88,7 +88,7 @@
                         <hr>
                         <div class="mb-2">
                            <div class="col-sm-3">
-                              <button type="submit" class="form-control form-sz-lg btn btn-block blue-button" >Submit for Approval</button>
+                              <button type="submit" class="form-control form-sz-lg btn btn-block btn-primary px-3 py-2 text-white blue-button" >Submit for Approval</button>
                            </div>
                         </div>
                      </form>
