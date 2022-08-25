@@ -22,9 +22,14 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('qwer1234'),
         ]);
         DB::table('users')->insert([
-            'name' => 'cyangden',
+            'name' => 'Chening Yangden',
             'email' => 'cyangden@bnb.bt',
             'password' => Hash::make('cyangden@2022'),
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tashi Phuntsho',
+            'email' => 'taphin@bnb.bt',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }
