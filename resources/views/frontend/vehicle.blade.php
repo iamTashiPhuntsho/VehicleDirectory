@@ -17,7 +17,7 @@
                            <form class="d-block mx-1 mx-md-4" action="{{ route('search') }}" method="GET">
                               <div class="row">
                                  <div class="col-sm-3">
-                                    <input type="text" name="search" class="form-control form-sz-lg" placeholder="Ex. BP-0-A0000" required/>
+                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="Ex. BP-0-A0000" required/>
                                  </div>
                                  <div class="col-sm-1">
                                     <button type="submit" class="form-control form-sz-lg btn btn-block " >
