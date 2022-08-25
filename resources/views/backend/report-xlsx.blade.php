@@ -65,6 +65,8 @@
                             <td>{{ $r->department->name }}</td>
                         @elseif($h == 'vertical')
                             <td>{{ $r->department->vertical->name }}</td>
+                        @elseif($h == 'vehicle_number')
+                            <td>{{ $r->vehicle_no }}</td>
                         @else
                             <td>{{$r->$h}}</td>
                         @endif
