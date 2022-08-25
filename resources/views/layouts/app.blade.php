@@ -9,7 +9,7 @@
         <script src="{{ asset('datatables/jQuery-3.6.0/jquery-3.6.0.min.js') }}"></script> 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link rel="stylesheet" href={{ asset('css/styles.css') }}>
+        <link rel="stylesheet" href={{ asset('css/adminstyle.css') }}>
         <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
         <link rel="stylesheet" href={{ asset('datatables/datatables.min.css') }}>
         
