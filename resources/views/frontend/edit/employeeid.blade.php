@@ -36,6 +36,18 @@
 
                         <button type="submit" class="form-control form-sz-lg btn btn-primary px-3 py-2 btn-block blue-button text-white">Send OTP</button>
                         </div>
+                        @if(session('status') == '1')
+   
+                
+                <small class="text-success"><i class="fas fa-exclamation-circle"></i> {{ session('msg') }}</small>
+         
+        @endif
+        @if(session('status') == '0')
+                <small class="text-danger"><i class="fas fa-exclamation-circle"></i> {{ session('msg') }}</small>
+             
+            
+        @endif
+        
                      </form>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-6 d-flex align-items-center order-1 order-lg-2">

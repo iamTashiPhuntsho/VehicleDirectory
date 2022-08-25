@@ -30,7 +30,7 @@
                         
                         @if ($errors->any())
                         @foreach ($errors->all() as $error)
-                        <small class=""><i class="fas fa-exclamation-circle"></i>  {{ $error }}</small><br>
+                        <small class="text-danger"><i class="fas fa-exclamation-circle"></i>  {{ $error }}</small><br>
                         @endforeach
                         @endif
                      </form>
