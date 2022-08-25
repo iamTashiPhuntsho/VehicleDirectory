@@ -20,7 +20,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                            <i class="fas fa-user fa-lg me-3 fa-fw fa-1x"></i>
                            <div class="form-outline flex-fill mb-0">
-                              <input type="text" name="employee_id" class="form-control form-sz-lg" placeholder="Enter your Employee ID" maxlength="10">
+                              <input type="text" name="employee_id" class="form-control form-sz-lg" placeholder="Enter your Employee ID" maxlength="10" autofocus>
                            </div>
                         </div>
                         <div class="button col-sm-6 d-flex mb-3">
