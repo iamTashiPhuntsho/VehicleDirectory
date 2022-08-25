@@ -1,7 +1,7 @@
 <x-frontend-layout>
    <x-sidebar />
    <div class="container">
-      <section class="py-5">
+      <section class="p-5">
          <div class="d-flex flex-column center">
             <h3 class="title2">Mail Signature Generator</h3>
             <div class="mb-3">
@@ -47,7 +47,7 @@ The contents of this e-mail and any attachment(s) are confidential and intended 
 </div></textarea>
                      <p class="text-white rounded-bottom py-1 bg-bnb-blue px-5 small"> Copy the above code and paste it in your mail signature setting.</p>
                   </div>
-                  <button onclick="copySign()" class="btn bg-bnb-blue text-white btn-primary rounded-4 py-2">Copy Signature Code</button>
+                  <button onclick="copySign()" class="btn text-white btn-primary rounded-4 py-2">Copy Signature Code</button>
                </div>
                @else
                <h5 class="mt-5 mb-3 pt-5 title2"> 

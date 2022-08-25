@@ -210,17 +210,8 @@ width: calc(50px + 2*1px);
 height: calc(50px + 2*1px);
 }
 
-.link {
-color: #0061ff;
-text-decoration: none;
-}
-.card-title {
-color: #0061ff;
-text-decoration: none;
-font-weight: 100;
-padding-right: 2rem;
 
-}
+
 
 .person-image[_ngcontent-app-root-c27] {
 border: 1px solid #d9dde4;
@@ -403,10 +394,7 @@ h4, .h4 {
   line-height: 0;
   margin: 30px 0;
 }
-.text-muted {
-color: #0061ff !important;
 
-}
 
 .table p  i{
 color: #4ad1e5;
@@ -524,8 +512,6 @@ color:#FEB139;
   float: left;
   width: 50%;
   padding: 10px;
-
- 
 }
 .column h4{
   text-align: left;
