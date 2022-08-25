@@ -9,7 +9,7 @@
                      <h2 class="no-case mb-4 ">Vehicle Directory</h2>
                      <div class="mb-3">
                         <p class="u-large-text u-text u-text-variant u-text-2"> 
-                           Enter the vehicle number to search for BNBL employee owner details for all extensions located in Bhutan.
+                           Enter the vehicle number to search for BNBL employee owner's detail for all extensions located in Bhutan.
                         </p>
                      </div>
                      <div class="card">
