@@ -284,7 +284,6 @@ outline: none;
 border: none;
 padding: 0;
 margin: 0;
-
 }
 .link{
   transform: translateY(0px);
@@ -302,7 +301,8 @@ margin: 0;
     color: #e2eafb;
     }
 
-.btn:hover{transform: translateY(-6px);
+.btn:hover{
+transform: translateY(-6px);
 background: #4ad1e5;
 color: #e2eafb;
 }

@@ -34,7 +34,7 @@
                         </div>
                         <div class="button col-sm-6 d-flex mb-3">
 
-                        <button type="submit" class="form-control form-sz-lg btn btn-primary px-3 py-2 btn-block blue-button text-white" >Send OTP</button>
+                        <button type="submit" class="form-control form-sz-lg btn btn-primary px-3 py-2 btn-block blue-button text-white">Send OTP</button>
                         </div>
                      </form>
                   </div>
