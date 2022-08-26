@@ -349,7 +349,6 @@ margin-left: auto;
 
 .row > * {
 flex-shrink: 0;
-
 padding-right: calc(var(--bs-gutter-x)/ 2);
 padding-left: calc(var(--bs-gutter-x)/ 2);
 margin-top:1rem;

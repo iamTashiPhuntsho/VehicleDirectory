@@ -19,7 +19,6 @@
                             <p><input type="text" name="employeename" value="{{ $record->name }}" class="form-control form-sz-sm" placeholder="Edit your employee Name">
                       </p>
                         </div>
-<<<<<<< HEAD
                         <p class="category ">
                           Job Title:  &nbsp; <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"> 
                           &nbsp; |&nbsp; 
@@ -37,10 +36,6 @@
                            </div>
 
                         </div>
-
-
-                 
-=======
                         <div class="row">
                            <div class="column mb-3 ">
                               
@@ -52,7 +47,7 @@
                               <input type="text" name="designation" value="{{$record->designation}}" class="form-control form-sz-sm" > </span></p>
                            </div>
                         </div>
->>>>>>> db5cea78dbec18e6f324701da5303a4ce766d067
+
                         <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
                         <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>
                         <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID and Employee ID, Please contact at 1277 or 1265</p>
