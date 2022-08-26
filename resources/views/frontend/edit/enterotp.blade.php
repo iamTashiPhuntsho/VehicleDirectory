@@ -26,8 +26,8 @@
                         </div>
                         <div class="col-sm-3">
                               <button type="submit" class="form-control form-sz-lg btn-primary btn px-3 py-2 btn-block text-white blue-button" >Verify OTP</button>
-
                            </div>
+                           
                         </div>
                         </form>
                         </div>

@@ -23,7 +23,6 @@
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body id="body-pd" class="font-sans antialiased">
-       
         @if(session('status') == '1')
             <div class="alert alert-success text-center" style=" margin: 50px;">
                {{ session('msg') }}
