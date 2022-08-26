@@ -170,13 +170,15 @@ class InfoController extends Controller
         }   
         else
         {
-            Signin::where('employee_id',$request->id)->update([
-                'OTP' => null,
-                'try_count' => null,
-                'OTP_time' => null
-            ]);
-            $status = '0';
-            $msg = "Contact Information of $request->name has not been modified. Changes were discarded.";
+
+            $signin = Signin::where('employee_id',$request->id)->first();
+            $signin->OTP = null;
+            $signin->try_count = null;
+            $signin->OTP_time = null;
+            if($signin->save()){
+                $status = '0';
+                $msg = "Contact Information of $request->name has not been modified. Changes were discarded.";
+            }
             return redirect()->route('get_search_path')->with(['status'=>$status,'msg'=>$msg]);
         }
     }
