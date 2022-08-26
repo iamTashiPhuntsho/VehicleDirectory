@@ -4,7 +4,7 @@
       <h2 class="no-case mb-3">Contact Information Registration</h2>
       <div class="col-lg-12">
          <div class="card text-black" style="border-radius: 15px;">
-            <div class="card-body p-md-5">
+            <div class="card-body ms-5 me-5 mb-3">
                <div class="row justify-content-center">
                   <div class="pt-0">
                      <form action="{{ route('contact_addition_request_path') }}" method="POST" enctype="multipart/form-data">
