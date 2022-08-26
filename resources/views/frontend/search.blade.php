@@ -1,5 +1,10 @@
 <x-frontend-layout>
    <x-sidebar />
+   @if(session('status') == '0')
+         <div class="alert alert-danger text-center" style=" margin: 50px; font-weight:normal;" >
+      {{ session('msg') }}
+          </div>
+   @endif
    <div class="content ">
       <div class="container-fluid grey-background">
          <div class="content">

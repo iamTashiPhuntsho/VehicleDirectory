@@ -1,6 +1,11 @@
 
 <x-frontend-layout>
    <x-sidebar />
+   @if(session('status') == '0')
+            <div class="alert alert-danger text-center" style=" margin: 50px; font-weight:normal;" >
+       {{ session('msg') }}
+            </div>
+   @endif
    <div class="content ">
       <div class="container-fluid grey-background">
          <div class="content">
@@ -29,6 +34,11 @@
                            </div>
                            
                         </div>
+                        @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                        <small class="text-danger"><i class="fas fa-exclamation-circle"></i>  {{ $error }}</small><br>
+                        @endforeach
+                        @endif
                         </form>
                         </div>
                         <div class="col-md-12 d-flex">
