@@ -21,9 +21,23 @@
                         </div>
                         <p class="category ">
                           Job Title:  &nbsp; <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"> 
-                          &nbsp &nbsp; | &nbsp &nbsp; 
+                          &nbsp; |&nbsp; 
                            Designation:   &nbsp;<input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required">
-</p>
+                        </p>
+
+                        <div class="row">
+                           <div class="column mb-3 ">
+                           <p>Job Title : <span> <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"></span></p>
+
+                           </div>
+                           <div class="column mb-3 ">
+                           <p>Designation : <span> <input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required"></span></p>
+
+                           </div>
+
+                        </div>
+
+
                  
                         <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
                         <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>

@@ -12,7 +12,7 @@
                            BNBL Employee Directory gives you the access to search various employee all over the extensions located in Bhutan.
                         </p>
                      </div>
-                     <div class="box wrapper mb-4 container">
+                     <div class="box wrapper mb-4 container ">
                         <div class="counter col_fourth">
                            <i class="fa-solid fa-users fa-2x"></i>
                            <p id='0101' class="fs-2 count-title count-number"></p>
