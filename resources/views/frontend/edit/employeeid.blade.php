@@ -12,7 +12,7 @@
       <div class="col-lg-12">
          <div class="card card-image text-black" style="border-radius: 15px;">
             <div class="card-body">
-               <div class="row justify-content-center">
+               <div class="row justify-content-center" style="padding-bottom:1rem;">
                   <div class="col-md-7 col-lg-7 col-xl-6 order-2 order-lg-1">
                      <p class="text-center h5 fw-bold mb-3 mx-1 mx-md-4 mt-4">Edit Here</p>
                      <form class="mx-1 mx-md-4" method="POST" action="{{ route('get_employee_and_send_otp_path') }}">
@@ -40,14 +40,10 @@
    
                 
                 <small class="text-success"><i class="fas fa-exclamation-circle"></i> {{ session('msg') }}</small>
-         
         @endif
         @if(session('status') == '0')
-                <small class="text-danger"><i class="fas fa-exclamation-circle"></i> {{ session('msg') }}</small>
-             
-            
+                <small class="text-danger"><i class="fas fa-exclamation-circle"></i> {{ session('msg') }}</small> 
         @endif
-        
                      </form>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-6 d-flex align-items-center order-1 order-lg-2">

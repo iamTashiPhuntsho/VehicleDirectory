@@ -47,6 +47,10 @@
                               <input type="text" name="designation" value="{{$record->designation}}" class="form-control form-sz-sm" > </span></p>
                            </div>
                         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e553001ca51338bd88f6c6fb8e645738342a7f7
                         <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
                         <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>
                         <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID and Employee ID, Please contact at 1277 or 1265</p>
