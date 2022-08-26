@@ -412,9 +412,9 @@ h4, .h4 {
 color: #4ad1e5;
 }
 .table p {
-color: #1065ba;
+color: #1C4E80!important;
 text-align: left;
- font-size: 14px;
+font-size: 14px;
 padding-left: 2rem;
 padding-right: 2rem;
 
