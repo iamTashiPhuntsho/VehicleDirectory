@@ -19,38 +19,19 @@
                             <p><input type="text" name="employeename" value="{{ $record->name }}" class="form-control form-sz-sm" placeholder="Edit your employee Name">
                       </p>
                         </div>
-                        <p class="category ">
-                          Job Title:  &nbsp; <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"> 
-                          &nbsp; |&nbsp; 
-                           Designation:   &nbsp;<input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required">
-                        </p>
-
-                        <div class="row">
-                           <div class="column mb-3 ">
-                           <p>Job Title : <span> <input type="text"  class="form_control form-sz-sm" name="title" value="{{$record->title}}"required="required"></span></p>
-
-                           </div>
-                           <div class="column mb-3 ">
-                           <p>Designation : <span> <input type="text" class="form-sz-sm form_control" name="designation" value="{{$record->designation}}" class="lg-input" required="required"></span></p>
-
-                           </div>
-
-                        </div>
-                        <div class="row">
-                           <div class="column mb-3 ">
+                  
+                        <p>
+                           <div class="column">
                               
                               <p>Job Title: <span>
                                  <input type="text" name="title" value="{{$record->title}}" class="form-control form-sz-sm"></span></p>
                            </div>
-                           <div class="column mb-3">
+                           <div class="column">
                               <p>Designation: <span> 
                               <input type="text" name="designation" value="{{$record->designation}}" class="form-control form-sz-sm" > </span></p>
                            </div>
-                        </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5e553001ca51338bd88f6c6fb8e645738342a7f7
+                        </p>
+                       
                         <p style="text-align:center;"><i class="fa-solid fa-address-card fa-lg" style="margin-right: 5px;"></i>Employee ID : <span>{{ $record->employee_id }}</span></p>
                         <p style="text-align:center;"><i class="fa fa-envelope-o fa-lg" style="margin-right: 5px;"></i> Email ID : <span class="text-bnb-blue lowercase">{{ $record->contact->email }}</span></p>
                         <p class="text-bnb-blue"><i class="fas fa-info-circle"></i> In order to change email ID and Employee ID, Please contact at 1277 or 1265</p>
