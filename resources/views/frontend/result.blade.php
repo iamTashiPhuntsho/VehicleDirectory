@@ -21,11 +21,11 @@
          
             @foreach($records->sortby('name') as $r)
             <div class="col-lg-4 p-2">
-               <div class="bg-white shadow-sm p-4 position-relative rounded overflow-hidden ">
+               <div class="bg-white shadow-lg p-4 position-relative rounded overflow-hidden ">
                         
                      <img src='{{ asset("storage/employee_images/$r->image") }}' style="object-fit: cover; object-position: center;" class="h-75 w-25 rounded-start shadow position-absolute top-0 end-0" alt="...">
                      
-                     <div style="width: 85%;">
+                     <div style="width:80%;">
                         <h5 class="title bnb-blue">{{ $r->name }}</h5>
                         <small class="bnb-blue" style="font-size: 12px; font-weight:bold;">{{ $r->title }}</small><br>
                         <small><i class="fa-solid fa-id-badge fa-fw me-2"></i>{{ $r->employee_id }}</small><small class="ms-4">
