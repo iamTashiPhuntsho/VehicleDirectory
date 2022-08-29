@@ -1,26 +1,23 @@
 <x-frontend-layout>
-   <x-sidebar />
    <div class="content ">
       <div class="container-fluid grey-background">
          <div class="content">
             <div class="container-fluid p-0">
                <section class="search-section p-3 p-lg-5 d-block d-column bg-bnb-white">
-                  <div class="my-auto">
-                     <h2 class="no-case mb-4 ">Vehicle Directory</h2>
-                     <div class="mb-3">
-                        <p class="u-large-text u-text u-text-variant u-text-2"> 
-                           Enter the vehicle number to search for BNBL employee owner's detail for all extensions located in Bhutan.
-                        </p>
-                     </div>
+                  <div class="my-5">
+                     <h2 class="no-case mb-4 title">Vehicle Directory</h2>
+                     <p class="small"> 
+                        Enter the vehicle number or employee name to search for details.
+                     </p>
                      <div class="card">
                         <div class="row mb-3 form-row">
-                           <form class="d-block mx-1 mx-md-4" action="{{ route('search') }}" method="GET">
-                              <div class="row">
-                                 <div class="col-sm-3">
-                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="Ex. BP-0-A0000" required/>
+                           <form action="{{ route('search') }}" method="GET">
+                              <div class="row px-3">
+                                 <div class="col-sm-5 p-2">
+                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="search key words can be name or vehicle number...." />
                                  </div>
-                                 <div class="col-sm-1">
-                                    <button type="submit" class="form-control form-sz-lg btn btn-block " >
+                                 <div class="col-sm-1 p-2">
+                                    <button type="submit" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white" >
                                     <i class="fas fa-search fa-lg"></i></button>
                                  </div>
                               </div>
@@ -33,13 +30,11 @@
                                     <tr>
                                        <th>SL. #</th>
                                        <th>Name</th>
-                                       <th>Employee ID</th>
-                                       <th>Department</th>
-                                       <th>Job Title</th>
-                                       <th>Extension</th>
-                                       <th>Mobile Number</th>
                                        <th>Vehicle Number</th>
-                                       <th>Email</th>
+                                       <th>Mobile Number</th>
+                                       <th>Extension</th>
+                                       <th>Job Title</th>
+                                       <th>Department</th>
                                     </tr>
                                  </thead>
                                  <tbody>
@@ -53,13 +48,11 @@
                                        $i++
                                        @endphp
                                        <td>{{ $employee->name }}</td>
-                                       <td>{{ $employee->employee_id }}</td>
-                                       <td>{{ $employee->department->name }}</td>
-                                       <td>{{ $employee->title }}</td>
-                                       <td>{{ $employee->contact->extension }}</td>
+                                       <td class="{{substr($employee->vehicle_no,0,2) == 'BT' || substr($employee->vehicle_no,0,2) == 'bt' || substr($employee->vehicle_no,0,2) == 'Bt' || substr($employee->vehicle_no,0,2) == 'bT' ? 'bg-warning text-black' : 'bg-danger text-white'}} text-center fs-6 text-uppercase"><b>{{ $employee->vehicle_no }}</b></td>
                                        <td>{{ $employee->contact->mobile }}</td>
-                                       <td>{{ $employee->vehicle_no }}</td>
-                                       <td>{{ $employee->contact->email }}</td>
+                                       <td>{{ $employee->contact->extension }}</td>
+                                       <td>{{ $employee->title }}</td>
+                                       <td>{{ $employee->department->name }}</td>
                                     </tr>
                                     @endforeach
                                  </tbody>

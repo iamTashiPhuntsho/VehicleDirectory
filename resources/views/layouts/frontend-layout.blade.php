@@ -11,9 +11,6 @@
         <link rel="stylesheet" href={{ asset('css/styles.css') }}>
         <link rel="stylesheet" href={{ asset('css/all.min.css') }}>
         <link rel="stylesheet" href={{ asset('css/directory.css') }}>
-        <link 
-  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
-  rel="stylesheet"  type='text/css'>
   
         <!-- Fonts -->
         {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}

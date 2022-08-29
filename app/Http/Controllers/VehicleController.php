@@ -18,13 +18,14 @@ class VehicleController extends Controller
     }
     public function search(Request $request){
         // Get the search value from the request
-        $search = $request->input('search');
+        $search = $request->search;
+        // return $search;
     
         // Search in the title and body columns from the posts table
-        $employees = Employee::query()
-            ->Where('vehicle_no', 'LIKE', "%{$search}%")
+        $employees = Employee::when($search, function($query,$search) {
+                $query->where('name', 'like', "%$search%")->orWhere('vehicle_no', 'like', "%$search%");
+            })  
             ->get();
-    
         // Return the search view with the resluts compacted
         return view('frontend.vehicle',compact('employees'));
     }
