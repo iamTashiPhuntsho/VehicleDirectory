@@ -20,6 +20,11 @@
                                     <button type="submit" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white" >
                                     <i class="fas fa-search fa-lg"></i></button>
                                  </div>
+                                 <div class="col-sm-3 p-2">
+                                    <a href="{{route('get_vehicle_path')}}" class="btn btn-lg rounded-5 bg-bnb-blue text-white p-2 px-5" >
+                                       <small class="fs-6">view all details</small> 
+                                    </a>
+                                 </div>
                               </div>
                            </form>
                         </div>
