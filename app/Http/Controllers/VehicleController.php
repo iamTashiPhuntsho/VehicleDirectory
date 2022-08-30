@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Crypt;
 class VehicleController extends Controller
 {
     public function vehicle(){
-    	$employees = Employee::whereNot('vehicle_no', NULL)->with('contact')->get();
+    	$employees = Employee::whereNot('vehicle_no', NULL)->with('contact')->where('status','active')->get();
     	// return $employees;
     	return view('frontend.vehicle',compact('employees'));
     }
@@ -25,7 +25,8 @@ class VehicleController extends Controller
         $employees = Employee::when($search, function($query,$search) {
                 $query->where('name', 'like', "%$search%")->orWhere('vehicle_no', 'like', "%$search%");
             })
-            ->whereNot('vehicle_no', NULL)  
+            ->whereNot('vehicle_no', NULL)
+            ->where('status','active')  
             ->get();
         // Return the search view with the resluts compacted
         return view('frontend.vehicle',compact('employees'));
