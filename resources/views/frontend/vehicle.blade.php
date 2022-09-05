@@ -14,7 +14,7 @@
                            <form action="{{ route('search') }}" method="GET">
                               <div class="row px-3">
                                  <div class="col-sm-5 p-2">
-                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="search key words can be vehicle no(Ex. BP-1-A2345)" />
+                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="(Ex. BP-1-A2345)" />
                                  </div>
                                  <div class="col-sm-1 p-2">
                                     <button type="submit" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white" >
