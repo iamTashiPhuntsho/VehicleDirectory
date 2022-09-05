@@ -23,7 +23,7 @@ class VehicleController extends Controller
     
         // Search in the title and body columns from the posts table
         $employees = Employee::when($search, function($query,$search) {
-                $query->where('name', 'like', "%$search%")->orWhere('vehicle_no', 'like', "%$search%");
+                $query->Where('vehicle_no', 'like', "%$search%");
             })
             ->whereNot('vehicle_no', NULL)
             ->where('status','active')  

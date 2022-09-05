@@ -7,14 +7,14 @@
                   <div class="my-5">
                      <h2 class="no-case mb-4 title">Vehicle Directory</h2>
                      <p class="small"> 
-                        Enter the vehicle number or employee name to search for details.
+                        Enter the vehicle number you want to search
                      </p>
                      <div class="card">
                         <div class="row mb-3 form-row">
                            <form action="{{ route('search') }}" method="GET">
                               <div class="row px-3">
                                  <div class="col-sm-5 p-2">
-                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="search key words can be name or vehicle number...." />
+                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="search key words can be vehicle no(Ex. BP-1-A2345)" />
                                  </div>
                                  <div class="col-sm-1 p-2">
                                     <button type="submit" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white" >
