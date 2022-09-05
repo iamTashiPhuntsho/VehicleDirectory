@@ -14,14 +14,14 @@
                            <form action="{{ route('search') }}" method="GET">
                               <div class="row px-3">
                                  <div class="col-sm-5 p-2">
-                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="Ex. BP-1-A2345" />
+                                    <input type="text" name="search" class="form-control form-sz-lg" autofocus placeholder="Ex. BP-1-A2345)" />
                                  </div>
                                  <div class="col-sm-1 p-2">
                                     <button type="submit" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white" >
                                     <i class="fas fa-search fa-lg"></i></button>
                                  </div>
                                  <div class="col-sm-3 p-2">
-                                    <a href="{{route('get_vehicle_path')}}" class="btn btn-lg rounded-5 bg-bnb-blue text-white p-2 px-5" >
+                                    <a href="{{route('get_vehicle_path')}}" class="form-control form-sz-lg btn btn-block bg-bnb-blue text-white p-2 px-5" >
                                        <small class="fs-6">view all details</small> 
                                     </a>
                                  </div>
